@@ -58,7 +58,7 @@
                                  </i>
                              </span>
                          </div>
-                         <a href="#" class="text-dark">
+                         <a href="createuser" class="text-dark">
                              <strong>Create New User</strong>
                          </a>
                      </div>
@@ -74,8 +74,9 @@
                  <div class="d-flex align-items-center">
                      <label for="chart-switch-toggle" class="mb-0">Show affiliate:</label>
                      <div class="custom-control custom-checkbox-toggle ml-2">
-                         <input checked="" aria-checked="true" type="checkbox" id="chart-switch-toggle" class="custom-control-input" role="switch" data-toggle="chart" data-target="#ordersChartSwitch" data-add='{"data":{"datasets":[{"data":[15,10,20,12,7,0,8,16,18,16,10,22],"backgroundColor":"#4EB4A5","label":"Affiliate","barPercentage":"0.5","barThickness":"20"}]}}'
-                         />
+                         <input checked="" aria-checked="true" type="checkbox" id="chart-switch-toggle" class="custom-control-input" 
+                         role="switch" data-toggle="chart" data-target="#ordersChartSwitch" 
+                         data-add='{"data":{"datasets":[{"data":[15,10,20,12,7,0,8,16,18,16,10,22],"backgroundColor":"#4EB4A5","label":"Affiliate","barPercentage":"0.5","barThickness":"20"}]}}'/>
                          <label class="custom-control-label" for="chart-switch-toggle"><span class="sr-only">Show
              affiliate</span></label>
                      </div>
