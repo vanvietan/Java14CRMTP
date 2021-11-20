@@ -1,5 +1,7 @@
 package cybersoft.backend.java14.crm.model;
 
+import cybersoft.backend.java14.crm.model.Roles;
+
 public class Users {
 	//Attributes
 	private int id;
@@ -7,13 +9,15 @@ public class Users {
 	private String password;
 	private String fullname;
 	private String avatar;
-	private Roles role_id;
+	private int role_id;
+	private Roles role;
 	
 	//Constructor
 	public Users() {
-		
+		role = new Roles();
+		id = role.getId();
 	}
-	public Users(int id,String email, String password, String fullname, String avatar, Roles role_id) {
+	public Users(int id,String email, String password, String fullname, String avatar, int role_id) {
 		this.email = email;
 		this.password = password;
 		this.fullname = fullname;
@@ -38,7 +42,7 @@ public class Users {
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
-	public void setRole_id(Roles role_id) {
+	public void setRole_id(int role_id) {
 		this.role_id = role_id;
 	}
 	public int getId() {
@@ -56,7 +60,7 @@ public class Users {
 	public String getAvatar() {
 		return avatar;
 	}
-	public Roles getRole_id() {
+	public int getRole_id() {
 		return role_id;
 	}
 	
