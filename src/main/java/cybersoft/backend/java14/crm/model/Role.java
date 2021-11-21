@@ -1,13 +1,19 @@
 package cybersoft.backend.java14.crm.model;
 
-public class Roles {
+public class Role {
 	//Attributes
 	private int id;
 	private String name;
 	private String description;
 	
 	//Constructor
-	public Roles() {
+	public Role(int id, String name, String description) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+	}
+	
+	public Role() {
 		
 	}
 	
