@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import cybersoft.backend.java14.crm.datasource.MySQLConnection;
-import cybersoft.backend.java14.crm.utils.UrlConst;
+import cybersoft.backend.java14.crm.util.UrlConst;
 
 @WebServlet(name="healthServlet",urlPatterns= {
 		UrlConst.HEALTH,
