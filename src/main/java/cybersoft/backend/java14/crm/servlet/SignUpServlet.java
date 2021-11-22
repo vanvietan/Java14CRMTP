@@ -28,21 +28,14 @@ public class SignUpServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher(JspConst.SIGNUP).forward(req, resp);
+		req.getRequestDispatcher(JspConst.SIGNUP)
+			.forward(req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		if ("submit" != null) {
-			user.setName(req.getParameter("name"));
-			user.setEmail(req.getParameter("email"));
-			user.setPassword(req.getParameter("password"));
-			user.setPhone(req.getParameter("phone"));
-			user.setAddress(req.getParameter("address"));
-				
-			service.addUser(user);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_ADD);
 		}
-		super.doPost(req, resp);
 	}
 }

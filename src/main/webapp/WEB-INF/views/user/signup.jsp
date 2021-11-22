@@ -256,7 +256,7 @@ p1 {text-align: left;}
 					</div>
 				</form>			
 				
-				<button type="submit" name="submit" class="btn btn-primary">Submit</button>
+				<button type="submit"  class="btn btn-primary">Submit</button>
 			</div>
 		</div>
 	</div>
