@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="form-group text-center">
-                <button action="user/add" class="btn btn-primary mb-2" type="submit">Create Account</button><br>
+                <button class="btn btn-primary mb-2" type="submit">Create Account</button><br>
                 <a class="text-body text-underline" href="login.html">Have an account? Login</a>
             </div>
         </form>
