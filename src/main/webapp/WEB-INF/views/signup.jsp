@@ -104,7 +104,7 @@ p1 {text-align: left;}
 							<label for="validationSample01">Full name</label> 
 							<div class="col-12 col-md-12 mb-3 input-group input-group-merge">
 								<input type="text" class="form-control" id="validationSample01"
-									placeholder="First name" required="">
+									placeholder="Enter your full name" required="" name="name">
 								<div class="input-group-prepend">
 			                        <div class="input-group-text">
 			                            <span class="far fa-user"></span>
@@ -120,8 +120,8 @@ p1 {text-align: left;}
 						<div class="form-row">
 							<label for="exampleInputEmail1">Your email:</label>
 							<div class="col-12 col-md-12 mb-3 input-group input-group-merge">
-								<input type="text" class="form-control" id="validationSample01"
-									placeholder="First name" required="">
+								<input type="email" class="form-control" id="validationSample01"
+									placeholder="Enter your email" required="" name="email">
 								<div class="input-group-prepend">
 			                        <div class="input-group-text">
 			                            <span class="far fa-envelope"></span>
@@ -138,9 +138,9 @@ p1 {text-align: left;}
 						<div class="form-group">
 							<label for="exampleInputPassword1">Your password:</label> <input
 								type="password" id="psw" class="form-control" id="exampleInputPassword1"
-								placeholder="Enter your password .." required="" 
+								placeholder="Enter your password .." required="" name="password"
 								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-								<div class="invalid-feedback">Please provide your email.</div>
+								<div class="invalid-feedback">Please provide your password.</div>
 								<div class="valid-feedback">Looks good!</div>
 						</div>
 					</div>
@@ -212,40 +212,18 @@ p1 {text-align: left;}
 					  }
 					}
 					</script>
-<!--		CITY STATE OPTION 					
-					<div class="was-validated">
-						<div class="form-row">
-							<div class="col-12 col-md-12 mb-3">
-								<label for="validationSample01">Full name</label> <input
-									type="text" class="form-control" id="validationSample01"
-									placeholder="First name" required="">
-								<div class="invalid-feedback">Please provide your full name.</div>
-								<div class="valid-feedback">Looks good!</div>
-							</div>
-						</div>
-						
-					</div>
-										
-					<div class="form-group">
-						<div class="form-row">
-							<div class="col-12 col-md-12 mb-3">
-								<label for="validationSample03">City</label> <input type="text"
-									class="form-control" id="validationSample03" placeholder="City"
-									required="">
-							</div>
-						</div>
-					</div>
-				
-					<div class="form-group">
-						<div class="form-row">
-							<div class="col-12 col-md-12 mb-3">
-								<label for="validationSample04">State</label> <input type="text"
-									class="form-control" id="validationSample04"
-									placeholder="State" required="">
-							</div>
-						</div>
-					</div> -->
 					
+					<div class="form-group">
+						<label for="exampleInputPassword1">Your phone number:</label>
+						<input type="number" class="form-control" id="exampleInputPassword1" 
+							name="phone" placeholder="Enter your phone number ..">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Your address:</label>
+						<input type="text" class="form-control" id="exampleInputEmail1"
+						name="address" placeholder="Enter your address ..">
+					</div>
+
 					<div class="popup" id="popup"><p style="color:blue;">Terms and conditions</p></div><br><br>
 					
 					<div class="bg-modal" id="bg-modal">
@@ -276,77 +254,12 @@ p1 {text-align: left;}
 								to terms and conditions </label>
 						</div>
 					</div>
-										
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
+				</form>			
+				
+				<button type="submit" name="submit" class="btn btn-primary">Submit</button>
 			</div>
 		</div>
 	</div>
-
-<!--		SCROLL DOWN OPTION
-	<div class="card card-form">
-		<div class="row no-gutters">
-			<div class="col-lg-4 card-body">
-				<p>
-					<strong class="headings-color">Select</strong>
-				</p>
-				<p class="text-muted">
-					Customizable select box with support for searching, tagging, remote
-					data sets, infinite scrolling, and many other highly used options
-					powered by Select2. Please read the <a href="https://select2.org/"
-						target="_blank">official plugin documentation</a> for a full list
-					of options.
-				</p>
-			</div>
-			<div class="col-lg-8 card-form__body card-body">
-				<div class="form-group">
-					<label for="select01">Basic</label> <select id="select01"
-						data-toggle="select" class="form-control">
-						<option selected="">My first option</option>
-						<option>Another option</option>
-						<option>Third option is here</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="select02">Avatars</label> <select id="select02"
-						data-toggle="select" data-minimum-results-for-search="-1"
-						class="form-control">
-						<option
-							data-avatar-src="assets/images/256_rsz_1andy-lee-642320-unsplash.jpg">
-							Adelle Sherley</option>
-						<option data-avatar-src="assets/images/avatar/demi.png">
-							Adrian Demian</option>
-						<option data-avatar-src="assets/images/avatar/green.svg">
-							Green Doe</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="select03">Multiple</label> <select id="select03"
-						data-toggle="select" multiple class="form-control">
-						<option selected="">CSS</option>
-						<option selected="">HTML</option>
-						<option>JavaScript</option>
-						<option>Bootstrap</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="select04">Large</label> <select id="select04"
-						data-toggle="select" multiple class="form-control form-control-lg">
-						<option>CSS</option>
-						<option>HTML</option>
-						<option selected="">JavaScript</option>
-						<option>Bootstrap</option>
-					</select>
-				</div>
-				<label for="select05">Small</label> <select id="select05"
-					data-toggle="select" class="form-control form-control-sm">
-					<option>My first option</option>
-					<option>Another option</option>
-					<option>Third option is here</option>
-				</select>
-			</div>
-		</div>
-	</div> -->
 </div>
 
 </body>

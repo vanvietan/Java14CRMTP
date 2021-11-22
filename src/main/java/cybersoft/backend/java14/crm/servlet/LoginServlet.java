@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cybersoft.backend.java14.crm.utils.JspConst;
-import cybersoft.backend.java14.crm.utils.UrlConst;
+import cybersoft.backend.java14.crm.util.JspConst;
+import cybersoft.backend.java14.crm.util.UrlConst;
 
 @WebServlet(name="loginServlet" , urlPatterns= {
 		UrlConst.LOGIN
-})
+		})
 public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
