@@ -49,4 +49,44 @@ public class UserRepository {
 		
 		return users;
 	}
+	
+	public int addUser(User user) {
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.ADD_USER;
+			
+			PreparedStatement statement = connection.prepareStatement(query);
+			
+			statement.setString(1, user.getAddress());
+			statement.setString(2, user.getEmail());
+			statement.setString(3, user.getName());
+			statement.setString(4, user.getPassword());
+			statement.setString(5, user.getPhone());
+			
+			return statement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+	
+	public int removeUser(int UserId) {
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = "DELETE FROM User WHERE id = ?";
+			
+			PreparedStatement statement = connection.prepareStatement(query);
+			
+			statement.setInt(1, UserId);
+			
+			return statement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 }
