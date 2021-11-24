@@ -24,13 +24,13 @@ public class UserServlet extends HttpServlet{
 	private UserService service;
 	private String action;
 	private User user;
-	
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		service = new UserService();
-		action="";
 		user = new User();
+		action="";
+		
 	}
 	
 	@Override
@@ -41,6 +41,7 @@ public class UserServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 		switch (action) {
 		
 		/* SHOW LIST USER */

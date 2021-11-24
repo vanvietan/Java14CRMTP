@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="cybersoft.backend.java14.crm.util.UrlConst" %>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,13 +99,13 @@ p1 {text-align: left;}
 		<div class="row no-gutters ">
 			
 			<div class="col-lg-12 card-form__body card-body ">
-				<form>
+				<form action="" method="post">
 					<div class="was-validated">
 						<div class="form-row">
 							<label for="validationSample01">Full name</label> 
 							<div class="col-12 col-md-12 mb-3 input-group input-group-merge">
-								<input type="text" class="form-control" id="validationSample01"
-									placeholder="Enter your full name" required="" name="name">
+								<input type="text" class="form-control" name="name"
+									placeholder="Enter your full name" required="" >
 								<div class="input-group-prepend">
 			                        <div class="input-group-text">
 			                            <span class="far fa-user"></span>
@@ -120,8 +121,8 @@ p1 {text-align: left;}
 						<div class="form-row">
 							<label for="exampleInputEmail1">Your email:</label>
 							<div class="col-12 col-md-12 mb-3 input-group input-group-merge">
-								<input type="email" class="form-control" id="validationSample01"
-									placeholder="Enter your email" required="" name="email">
+								<input type="email" class="form-control" name="email"
+									placeholder="Enter your email" required="" >
 								<div class="input-group-prepend">
 			                        <div class="input-group-text">
 			                            <span class="far fa-envelope"></span>
@@ -137,8 +138,8 @@ p1 {text-align: left;}
 					<div class="was-validated">
 						<div class="form-group">
 							<label for="exampleInputPassword1">Your password:</label> <input
-								type="password" id="psw" class="form-control" id="exampleInputPassword1"
-								placeholder="Enter your password .." required="" name="password"
+								type="password" id="psw" class="form-control" name="password"
+								placeholder="Enter your password .." required="" 
 								pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
 								<div class="invalid-feedback">Please provide your password.</div>
 								<div class="valid-feedback">Looks good!</div>
@@ -254,9 +255,12 @@ p1 {text-align: left;}
 								to terms and conditions </label>
 						</div>
 					</div>
+				<button type="submit" value="submit" class="btn btn-primary">Submit</button>	
+				<%-- <a class="btn btn-sm btn-danger" href="<%= request.getContextPath() + UrlConst.USER_ADD%>?name=${user.name}?password=${user.password}?phone=${user.phone}?address=${user.address}?email=${user.email}">SUBMIT</a> --%>	
 				</form>			
 				
-				<button type="submit"  class="btn btn-primary">Submit</button>
+				
+				
 			</div>
 		</div>
 	</div>

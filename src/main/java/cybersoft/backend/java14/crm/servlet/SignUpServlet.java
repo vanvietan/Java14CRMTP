@@ -24,6 +24,7 @@ public class SignUpServlet extends HttpServlet{
 	public void init() throws ServletException {
 		super.init();
 		user = new User();
+		service = new UserService();
 	}
 	
 	@Override
