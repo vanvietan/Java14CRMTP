@@ -72,7 +72,7 @@ public class UserRepository {
 	public int deleteUser(String userEmail) {
 		try {
 			Connection connection = MySQLConnection.getConnection();
-			String query = "DELETE FROM crm_user WHERE email = ?";
+			String query = DbQuery.DELETE_USER;
 			
 			PreparedStatement statement = connection.prepareStatement(query);
 			
