@@ -13,7 +13,7 @@ import cybersoft.backend.java14.crm.util.UrlConst;
 
 @WebServlet(name="loginServlet" , urlPatterns= {
 		UrlConst.LOGIN
-})
+		})
 public class LoginServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

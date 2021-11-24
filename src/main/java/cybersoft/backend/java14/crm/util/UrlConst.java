@@ -11,8 +11,8 @@ public class UrlConst {
 	final public static String ROOT = "/*";
 	final public static String USERLIST = "/userlist";
 	final public static String HOME = "/home";
-	final public static String CREATEUSER = "/createuser";
 	final public static String LOGIN = "/login";
+	final public static String SIGNUP = "/signup";
 	
 	//Auth Connection
 	public static final String AUTH_LOGIN = "/log-in";
