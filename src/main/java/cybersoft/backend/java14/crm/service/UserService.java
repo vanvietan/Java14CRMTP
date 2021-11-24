@@ -21,8 +21,8 @@ public class UserService {
 		return repository.addUser(user) == 1 ? true : false;
 	}
 
-	public boolean deleteUser(int id) {
-		return true;
-		/* return repository.addUser(userId) == 1 ? true:false; */
+	public boolean removeUser(String email) {
+		return repository.deleteUser(email) == 1 ? true : false;
+		
 	}
 }

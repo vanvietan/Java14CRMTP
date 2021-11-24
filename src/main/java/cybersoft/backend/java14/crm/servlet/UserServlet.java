@@ -16,6 +16,7 @@ import cybersoft.backend.java14.crm.util.UrlConst;
 
 @WebServlet(name="userServlet", urlPatterns= {
 		UrlConst.USER_DASHBOARD,
+		UrlConst.USER_LIST,
 		UrlConst.USER_ADD,
 		UrlConst.USER_DELETE,
 		UrlConst.USER_UPDATE
@@ -45,10 +46,10 @@ public class UserServlet extends HttpServlet{
 		switch (action) {
 		
 		/* SHOW LIST USER */
-		case UrlConst.USER_DASHBOARD:
+		case UrlConst.USER_LIST:
 			List<User> users = service.getUsers();
 			req.setAttribute("users", users);
-			req.getRequestDispatcher(JspConst.USER_DASHBOARD)
+			req.getRequestDispatcher(JspConst.USER_LIST)
 				.forward(req, resp);
 			break;
 			
@@ -67,9 +68,9 @@ public class UserServlet extends HttpServlet{
 		
 		/* DELETE USER*/
 		case UrlConst.USER_DELETE:
-			int deleteUser = Integer.parseInt(req.getParameter("id")) ;
-			service.deleteUser(deleteUser);
-			resp.sendRedirect(req.getContextPath() + UrlConst.USER_DELETE);
+			String removeEmail = req.getParameter("email") ;
+			service.removeUser(removeEmail);
+			resp.sendRedirect(req.getContextPath() + UrlConst.USER_LIST);
 			break;
 			
 		default:

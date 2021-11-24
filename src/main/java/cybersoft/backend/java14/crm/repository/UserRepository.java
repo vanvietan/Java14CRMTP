@@ -69,14 +69,14 @@ public class UserRepository {
 		return 0;
 	}
 	
-	public int removeUser(int UserId) {
+	public int deleteUser(String userEmail) {
 		try {
 			Connection connection = MySQLConnection.getConnection();
-			String query = "DELETE FROM User WHERE id = ?";
+			String query = DbQuery.DELETE_USER;
 			
 			PreparedStatement statement = connection.prepareStatement(query);
 			
-			statement.setInt(1, UserId);
+			statement.setString(1, userEmail);
 			
 			return statement.executeUpdate();
 		} catch (SQLException e) {
