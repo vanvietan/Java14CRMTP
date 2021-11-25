@@ -19,7 +19,7 @@ import cybersoft.backend.java14.crm.util.UrlConst;
 		UrlConst.USER_LIST,
 		UrlConst.USER_ADD,
 		UrlConst.USER_DELETE,
-		UrlConst.AUTH_LOGIN
+		
 })
 public class UserServlet extends HttpServlet{
 	private UserService service;
@@ -74,15 +74,15 @@ public class UserServlet extends HttpServlet{
 			break;
 			
 		/* LOGIN */
-		case UrlConst.AUTH_LOGIN:
-			String email = req.getParameter("email_2");
-			String password = req.getParameter("password_2");
-			boolean isSuccess = service.loginUser(email, password);
-			if(isSuccess == true) {
-				resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
-			}else {
-				resp.sendRedirect(req.getContextPath() + UrlConst.LOGIN);
-			}
+//		case UrlConst.AUTH_LOGIN:
+//			String email = req.getParameter("email");
+//			String password = req.getParameter("password");
+//			boolean isSuccess = service.loginUser(email, password);
+//			if(isSuccess == true) {
+//				resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
+//			}else {
+//				resp.sendRedirect(req.getContextPath() + UrlConst.LOGIN);
+//			}
 			
 		default:
 			break;

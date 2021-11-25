@@ -8,7 +8,7 @@ public class JspConst {
 	public static final String USER_LIST =	"WEB-INF/views/user/user-list.jsp";
 	final public static String LOGIN =			"WEB-INF/views/user/login.jsp";
 	final public static String SIGNUP =			"WEB-INF/views/user/signup.jsp";
-	final public static String USER_UPDATE = "WEB-INF/views/views/user/user-update.jsp";
+	final public static String USER_UPDATE = "WEB-INF/views/user/user-update.jsp";
 	
 
 }
