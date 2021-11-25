@@ -13,6 +13,7 @@ import cybersoft.backend.java14.crm.model.Role;
 import cybersoft.backend.java14.crm.model.User;
 
 public class UserRepository {
+	/* SHOW LIST */
 	public List<User> getUsers() {
 		List<User> users = new LinkedList<User>();
 		try {
@@ -48,6 +49,7 @@ public class UserRepository {
 		return users;
 	}
 	
+	/* CREATE USER */
 	public int addUser(User user) {
 		try {
 			Connection connection = MySQLConnection.getConnection();
@@ -69,6 +71,7 @@ public class UserRepository {
 		return 0;
 	}
 	
+	/* DELETE USER */
 	public int deleteUser(String userEmail) {
 		try {
 			Connection connection = MySQLConnection.getConnection();
@@ -86,4 +89,23 @@ public class UserRepository {
 		
 		return 0;
 	}
+	
+	/* LOGIN */
+//	public int loginUser(String email, String password) {
+//		try {
+//			Connection connection = MySQLConnection.getConnection();
+//			String query = "SELECT * FROM crm_user WHERE email ='" + email + "' AND password ='" + password + "'" ;
+//			PreparedStatement statement = connection.prepareStatement(query);
+//			
+//			return statement.executeUpdate();
+//		}catch(SQLException e) {
+//			System.out.println("Không thể kết nổi đến cơ sở dữ liệu");
+//			e.printStackTrace();
+//		}
+//		return 0;
+//	}
+	
+	
+	
+	
 }

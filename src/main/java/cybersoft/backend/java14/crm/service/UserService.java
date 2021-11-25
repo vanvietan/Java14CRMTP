@@ -25,4 +25,15 @@ public class UserService {
 		return repository.deleteUser(email) == 1 ? true : false;
 		
 	}
+
+	public boolean loginUser(String email, String password) {
+		List<User> users = repository.getUsers();
+		for(User user : users) {
+			if(email.equals(user.getEmail()) && password.equals(user.getPassword())) {
+				return true;
+			}
+			break;
+		}
+		return false;
+	}
 }
