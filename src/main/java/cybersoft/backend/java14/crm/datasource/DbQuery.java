@@ -11,5 +11,4 @@ public class DbQuery {
 	public static final String ADD_USER = "INSERT INTO crm_user (address, email, name, password, phone) VALUES (?, ?, ?, ?, ?)";
 	public static final String ADD_TASK = "INSERT INTO crm_task (name, description, start_date, end_date) VALUES (?, ?, ?, ?)";
 	public static final String REMOVE_TASK = "DELETE FROM crm_task WHERE id = ?";
-
 }
