@@ -14,7 +14,7 @@
         </div>
 
         <h4 class="m-0">Log in!</h4>
-        <p class="mb-5">Welcome to Login!</p>
+        <p class="mb-5">You wanna get the job done? LOG IN NOW!</p>
 
         <form action="<%= request.getContextPath()+UrlConst.AUTH_LOGIN %>" method="post">
             

@@ -33,10 +33,10 @@ public class LoginServlet extends HttpServlet{
 		String password = req.getParameter("password");
 		boolean isSuccess = service.loginUser(email, password);
 		if(isSuccess) {
-			req.getSession().setAttribute("isAuthenticated", true);
+//			req.getSession().setAttribute("isAuthenticated", true);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
 		}else {
-			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
+			resp.sendRedirect(req.getContextPath() + UrlConst.LOGIN);
 		}
 	}
 }
