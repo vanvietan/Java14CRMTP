@@ -2,7 +2,7 @@ package cybersoft.backend.java14.crm.util;
 
 public class UrlConst {
 
-	
+	public final static String TEST="/test";
 
 	//Url Connection
 	final public static String HEALTH="/health";
@@ -23,4 +23,10 @@ public class UrlConst {
 	public static final String USER_ADD = "/user/add";
 	public static final String USER_DELETE = "/user/delete";
 	public static final String USER_UPDATE = "/user/update";
+	
+	public static final String TASK = "/task";
+	public static final String TASK_DELETE = "/task/delete";
+	public static final String TASK_ADD = "/task/add";
+	public static final String TASK_LIST = "/tasklist";
+	
 }

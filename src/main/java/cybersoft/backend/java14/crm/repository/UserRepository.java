@@ -9,7 +9,10 @@ import java.util.List;
 
 import cybersoft.backend.java14.crm.datasource.DbQuery;
 import cybersoft.backend.java14.crm.datasource.MySQLConnection;
+import cybersoft.backend.java14.crm.model.Project;
 import cybersoft.backend.java14.crm.model.Role;
+import cybersoft.backend.java14.crm.model.Status;
+import cybersoft.backend.java14.crm.model.Task;
 import cybersoft.backend.java14.crm.model.User;
 
 public class UserRepository {
@@ -86,4 +89,5 @@ public class UserRepository {
 		
 		return 0;
 	}
+		
 }

@@ -255,12 +255,8 @@ p1 {text-align: left;}
 								to terms and conditions </label>
 						</div>
 					</div>
-				<button type="submit" value="submit" class="btn btn-primary">Submit</button>	
-				<%-- <a class="btn btn-sm btn-danger" href="<%= request.getContextPath() + UrlConst.USER_ADD%>?name=${user.name}?password=${user.password}?phone=${user.phone}?address=${user.address}?email=${user.email}">SUBMIT</a> --%>	
-				</form>			
-				
-				
-				
+					<button type="submit" value="submit" class="btn btn-primary">Submit</button>	
+				</form>
 			</div>
 		</div>
 	</div>

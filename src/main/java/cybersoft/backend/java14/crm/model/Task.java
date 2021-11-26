@@ -1,23 +1,36 @@
 package cybersoft.backend.java14.crm.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Task {
 	//Attribute
+	public User assignee = new User();
 	private int id;
 	private String name;
-	private Date start_date;
-	private Date end_date;
-	private User user_id;
-	private Project job_id;
-	private Status status_id;
+	private String description;
+	private Long start_date;
+	private Long end_date;
+	private Status status;
+	private Project project;
 	
 	//Constructor
 	public Task() {
 		
 	}
 	
+	public Task(int id, String name, String description, Long start_date, Long end_date, Status status, Project project, User assigne) {
+		
+	}
+
 	//Getters & Setters
+	public User getAssignee() {
+		return assignee;
+	}
+	
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -26,26 +39,26 @@ public class Task {
 		this.name = name;
 	}
 
-	public void setStart_date(Date start_date) {
-		this.start_date = start_date;
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
-	public void setEnd_date(Date end_date) {
-		this.end_date = end_date;
+	public void setAssignee(User assignee) {
+		this.assignee = assignee;
 	}
 
-	public void setUser_id(User user_id) {
-		this.user_id = user_id;
+	public Project getProject() {
+		return project;
 	}
 
-	public void setJob_id(Project job_id) {
-		this.job_id = job_id;
+	public void setProject(Project project) {
+		this.project = project;
 	}
 
-	public void setStatus_id(Status status_id) {
-		this.status_id = status_id;
+	public String getDescription() {
+		return description;
 	}
-
+	
 	public int getId() {
 		return id;
 	}
@@ -54,26 +67,25 @@ public class Task {
 		return name;
 	}
 
-	public Date getStart_date() {
+	public Long getStart_date() {
 		return start_date;
 	}
 
-	public Date getEnd_date() {
+	public Long getEnd_date() {
 		return end_date;
 	}
 
-	public User getUser_id() {
-		return user_id;
+	public Status getStatus() {
+		return status;
 	}
 
-	public Project getJob_id() {
-		return job_id;
+	public void setStart_date(Long date) {
+		this.start_date = date;
 	}
 
-	public Status getStatus_id() {
-		return status_id;
+	public void setEnd_date(Long date) {
+		this.end_date = date;
 	}
-	
-	
+
 	
 }

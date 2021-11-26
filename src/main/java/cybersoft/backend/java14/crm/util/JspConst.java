@@ -8,5 +8,8 @@ public class JspConst {
 	public static final String USER_DASHBOARD =	"WEB-INF/views/user/userlist.jsp";
 	final public static String LOGIN =			"WEB-INF/views/user/login.jsp";
 	final public static String SIGNUP =			"WEB-INF/views/user/signup.jsp";
+	
+	final public static String TASK_LIST =		"WEB-INF/views/task/tasklist.jsp";
+	final public static String TASK_ADD =		"WEB-INF/views/task/add.jsp";
 
 }

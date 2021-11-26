@@ -41,7 +41,6 @@ public class UserServlet extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 		switch (action) {
 		
 		/* SHOW LIST USER */
@@ -67,8 +66,8 @@ public class UserServlet extends HttpServlet{
 		
 		/* DELETE USER*/
 		case UrlConst.USER_DELETE:
-			int deleteUser = Integer.parseInt(req.getParameter("id")) ;
-			service.deleteUser(deleteUser);
+			int userId = Integer.parseInt(req.getParameter("id")) ;
+			service.deleteUser(userId);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_DELETE);
 			break;
 			

@@ -12,9 +12,9 @@ import cybersoft.backend.java14.crm.util.JspConst;
 import cybersoft.backend.java14.crm.util.UrlConst;
 
 @WebServlet(name="signupServlet", urlPatterns= {
-		UrlConst.SIGNUP
+		UrlConst.TEST
 		})
-public class SignUpServlet extends HttpServlet{
+public class TestServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getRequestDispatcher(JspConst.SIGNUP)
