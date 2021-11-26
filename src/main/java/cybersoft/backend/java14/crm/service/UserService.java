@@ -32,7 +32,6 @@ public class UserService {
 			if(email.equals(user.getEmail()) && password.equals(user.getPassword())) {
 				return true;
 			}
-			break;
 		}
 		return false;
 	}
