@@ -58,7 +58,7 @@
                 
                  <ul class="nav navbar-nav d-none d-sm-flex border-left navbar-border navbar-height align-items-center" >
 					<div class="button-list d-flex flex-wrap" >	
-	                	<a href="login">
+	                	<a href="log-in">
 	                		<button type="button" class="btn btn-primary btn-rounded" style="height:40px; width:73px"> Log in </button>
 	                	</a>
 	            	</div>

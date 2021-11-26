@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import = "cybersoft.backend.java14.crm.util.UrlConst" %>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -13,25 +13,15 @@
             </a>
         </div>
 
-        <h4 class="m-0">Sign up!</h4>
-        <p class="mb-5">Create an account now!</p>
+        <h4 class="m-0">Log in!</h4>
+        <p class="mb-5">You wanna get the job done? LOG IN NOW!</p>
 
-        <form action="index.html" novalidate>
-            <div class="form-group">
-                <label class="text-label" for="name_2">Name:</label>
-                <div class="input-group input-group-merge">
-                    <input id="name_2" type="text" required="" class="form-control form-control-prepended" placeholder="John Doe">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">
-                            <span class="far fa-user"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <form action="<%= request.getContextPath()+UrlConst.AUTH_LOGIN %>" method="post">
+            
             <div class="form-group">
                 <label class="text-label" for="email_2">Email Address:</label>
                 <div class="input-group input-group-merge">
-                    <input id="email_2" type="email" required="" class="form-control form-control-prepended" placeholder="john@doe.com">
+                    <input name="email" type="email" required="" class="form-control form-control-prepended" placeholder="john@doe.com">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <span class="far fa-envelope"></span>
@@ -42,7 +32,7 @@
             <div class="form-group">
                 <label class="text-label" for="password_2">Password:</label>
                 <div class="input-group input-group-merge">
-                    <input id="password_2" type="password" required="" class="form-control form-control-prepended" placeholder="Enter your password">
+                    <input name="password" type="password" required="" class="form-control form-control-prepended" placeholder="Enter your password">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
                             <span class="far fa-key"></span>
@@ -57,8 +47,8 @@
                 </div>
             </div>
             <div class="form-group text-center">
-                <button action="user/add" class="btn btn-primary mb-2" type="submit">Create Account</button><br>
-                <a class="text-body text-underline" href="login.html">Have an account? Login</a>
+                <button class="btn btn-primary mb-2" type="submit">Login</button><br>
+                <a class="text-body text-underline" href="signup">Don't have an account? Sign up</a>
             </div>
         </form>
     </div>
