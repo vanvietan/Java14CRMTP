@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet{
 			req.getSession().setAttribute("isAuthenticated", true);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
 		}else {
-			resp.sendRedirect(req.getContextPath() + UrlConst.LOGIN);
+			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
 		}
 	}
 }
