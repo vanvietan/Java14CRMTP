@@ -33,7 +33,8 @@ public class AuthFilter implements Filter {
 			chain.doFilter(req, resp);
 			
 		}else if(UrlConst.AUTH_LOGIN.equals(req.getServletPath()) 
-				|| UrlConst.SIGNUP.equals(req.getServletPath())) {
+				|| UrlConst.SIGNUP.equals(req.getServletPath())
+				|| UrlConst.USER_ADD.equals(req.getServletPath())) {
 			
 			//Nếu chưa đăng nhập và truy cập trang đăng nhập thì cho qua
 			chain.doFilter(req, resp);

@@ -61,7 +61,7 @@ public class UserRepository {
 			statement.setString(3, user.getName());
 			statement.setString(4, user.getPassword());
 			statement.setString(5, user.getPhone());
-						
+			statement.setInt(6, 1);						
 			return statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
@@ -91,19 +91,19 @@ public class UserRepository {
 	}
 	
 	/* LOGIN */
-//	public int loginUser(String email, String password) {
-//		try {
-//			Connection connection = MySQLConnection.getConnection();
-//			String query = "SELECT * FROM crm_user WHERE email ='" + email + "' AND password ='" + password + "'" ;
-//			PreparedStatement statement = connection.prepareStatement(query);
-//			
-//			return statement.executeUpdate();
-//		}catch(SQLException e) {
-//			System.out.println("Không thể kết nổi đến cơ sở dữ liệu");
-//			e.printStackTrace();
-//		}
-//		return 0;
-//	}
+	public int loginUser(String email, String password) {
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = "SELECT * FROM crm_user WHERE email ='" + email + "' AND password ='" + password + "'" ;
+			PreparedStatement statement = connection.prepareStatement(query);
+			
+			return statement.executeUpdate();
+		}catch(SQLException e) {
+			System.out.println("Không thể kết nổi đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}
+		return 0;
+	}
 	
 	
 	

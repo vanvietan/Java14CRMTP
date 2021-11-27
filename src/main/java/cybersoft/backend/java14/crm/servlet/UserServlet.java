@@ -55,7 +55,6 @@ public class UserServlet extends HttpServlet{
 			
 		/* ADD USER */	
 		case UrlConst.USER_ADD:
-			
 			user.setName(req.getParameter("name"));
 			user.setEmail(req.getParameter("email"));
 			user.setPassword(req.getParameter("password"));
@@ -63,7 +62,7 @@ public class UserServlet extends HttpServlet{
 			user.setAddress(req.getParameter("address"));
 				
 			service.addUser(user);
-			resp.sendRedirect(req.getContextPath() + UrlConst.SIGNUP);
+			resp.sendRedirect(req.getContextPath() + UrlConst.SIGNUP);			
 			break;	
 		
 		/* DELETE USER*/
@@ -74,15 +73,15 @@ public class UserServlet extends HttpServlet{
 			break;
 			
 		/* LOGIN */
-//		case UrlConst.AUTH_LOGIN:
-//			String email = req.getParameter("email");
-//			String password = req.getParameter("password");
-//			boolean isSuccess = service.loginUser(email, password);
-//			if(isSuccess == true) {
-//				resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
-//			}else {
-//				resp.sendRedirect(req.getContextPath() + UrlConst.LOGIN);
-//			}
+		case UrlConst.AUTH_LOGIN:
+			String email = req.getParameter("email");
+			String password = req.getParameter("password");
+			boolean isSuccess = service.loginUser(email, password);
+			if(isSuccess == true) {
+				resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
+			}else {
+				resp.sendRedirect(req.getContextPath() + UrlConst.LOGIN);
+			}
 			
 		default:
 			break;
