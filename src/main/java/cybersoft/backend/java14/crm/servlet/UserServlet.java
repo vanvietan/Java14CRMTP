@@ -73,6 +73,9 @@ public class UserServlet extends HttpServlet{
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_LIST);
 			break;
 			
+		
+			
+			
 		/* LOGIN */
 //		case UrlConst.AUTH_LOGIN:
 //			String email = req.getParameter("email");
