@@ -63,7 +63,7 @@ public class UserServlet extends HttpServlet{
 			user.setAddress(req.getParameter("address"));
 				
 			service.addUser(user);
-			resp.sendRedirect(req.getContextPath() + UrlConst.SIGNUP);
+			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
 			break;	
 		
 		/* DELETE USER*/
