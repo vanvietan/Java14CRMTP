@@ -22,5 +22,19 @@ public class UrlConst {
 	public static final String USER_DASHBOARD = "/user";
 	public static final String USER_ADD = "/user/add";
 	public static final String USER_DELETE = "/user/delete";
+	
+	//User Update
 	public static final String USER_UPDATE = "/user-update";
+	public static final String USER_UPDATE_NAME ="/user-update/name";
+	public static final String USER_UPDATE_EMAIL ="/user-update/email";
+	public static final String USER_UPDATE_PASSWORD ="/user-update/password";
+	public static final String USER_UPDATE_PHONE ="/user-update/phone";
+	public static final String USER_UPDATE_ADDRESS ="/user-update/address";
+	
+	//User Management
+	public static final String USER_MANAGEMENT="/management";
+	public static final String USER_MANAGEMENT_ROLE_EDIT = "/management/role-edit";
+	
+	//Role
+	public static final String ROLE_EDIT ="/role-edit";
 }
