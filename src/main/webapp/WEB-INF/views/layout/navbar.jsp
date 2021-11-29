@@ -41,7 +41,19 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Task</a>
-                    
+                     <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                            Task
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="userlist">
+                                Task List
+                            </a>
+                            <a class="dropdown-item" href="task-add">
+                                Add Task
+                            </a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>

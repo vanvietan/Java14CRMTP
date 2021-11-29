@@ -10,7 +10,13 @@ public class JspConst {
 	final public static String SIGNUP =			"WEB-INF/views/user/signup.jsp";
 	final public static String USER_UPDATE = 	"WEB-INF/views/user/user-update.jsp";
 	
+  //Task
+	final public static String TASK_LIST =		"WEB-INF/views/task/tasklist.jsp";
+	final public static String TASK_ADD =		"WEB-INF/views/task/add.jsp";
+	final public static String TEST = 			"WEB-INF/views/task/test.jsp";
+
 	//Role
 	public static final String ROLE_EDIT = 		"WEB-INF/views/user/role-edit.jsp";
+
 
 }
