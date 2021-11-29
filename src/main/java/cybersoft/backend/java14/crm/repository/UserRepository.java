@@ -129,7 +129,7 @@ public class UserRepository {
 			statement.setString(2, emailSession);
 			return statement.executeUpdate();
 		}catch(SQLException e) {
-			System.out.println("Khônge thể kết nối đến cơ sở dự liệu");
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
 			e.printStackTrace();
 		}
 		return 0;
@@ -144,7 +144,7 @@ public class UserRepository {
 			statement.setString(2, emailSession);
 			return statement.executeUpdate();
 		}catch(SQLException e) {
-			System.out.println("Khônge thể kết nối đến cơ sở dự liệu");
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
 			e.printStackTrace();
 		}
 		return 0;
@@ -159,7 +159,7 @@ public class UserRepository {
 			statement.setString(2, emailSession);
 			return statement.executeUpdate();
 		}catch(SQLException e) {
-			System.out.println("Khônge thể kết nối đến cơ sở dự liệu");
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
 			e.printStackTrace();
 		}		
 		return 0;
@@ -174,12 +174,12 @@ public class UserRepository {
 			statement.setString(2, emailSession);
 			return statement.executeUpdate();
 		}catch(SQLException e) {
-			System.out.println("Khônge thể kết nối đến cơ sở dự liệu");
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
 			e.printStackTrace();
 		}		
 		return 0;
 	}
-
+	/* USER CHANGE ADDRESS */
 	public int changeAddress(String changeAddress, String emailSession) {
 		try {
 			Connection connection = MySQLConnection.getConnection();
@@ -189,30 +189,53 @@ public class UserRepository {
 			statement.setString(2, emailSession);
 			return statement.executeUpdate();
 		}catch(SQLException e) {
-			System.out.println("Khônge thể kết nối đến cơ sở dự liệu");
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
 			e.printStackTrace();
 		}				
 		return 0;
 	}
-	
-	
-	
-	/* LOGIN */
-//	public int loginUser(String email, String password) {
-//		try {
-//			Connection connection = MySQLConnection.getConnection();
-//			String query = "SELECT * FROM crm_user WHERE email ='" + email + "' AND password ='" + password + "'" ;
-//			PreparedStatement statement = connection.prepareStatement(query);
-//			
-//			return statement.executeUpdate();
-//		}catch(SQLException e) {
-//			System.out.println("Không thể kết nổi đến cơ sở dữ liệu");
-//			e.printStackTrace();
-//		}
-//		return 0;
-//	}
-	
-	
+	/* ROLE CHANGE TO ADMIN */
+	public int changeToAdmin(String email) {
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.ROLE_TO_ADMIN;
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setString(1, email);
+			return statement.executeUpdate();
+		}catch(SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	/* ROLE CHANGE TO MANAGER */
+	public int changeToManager(String email) {
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.ROLE_TO_MANAGER;
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setString(1, email);
+			return statement.executeUpdate();
+		}catch(SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}		
+		return 0;
+	}
+	/* ROLE CHANGE TO USER */
+	public int changeToUser(String email) {
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.ROLE_TO_USER;
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setString(1, email);
+			return statement.executeUpdate();
+		}catch(SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}		
+		return 0;
+	}
 	
 	
 }

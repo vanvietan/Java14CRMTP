@@ -65,9 +65,25 @@ public class UserService {
 		return repository.changePhone(changePhone , emailSession) == 1 ? true : false;	
 		
 	}
-
+	/* CHANGE ADDRESS */
 	public boolean changeAddress(String changeAddress, String emailSession) {
 		return repository.changeAddress(changeAddress , emailSession) == 1 ? true : false;	
+		
+	}
+	
+	/* CHANGE ROLE TO ADMIN */
+	public boolean changeToAdmin(String email) {
+		return repository.changeToAdmin(email) == 1 ? true : false;
+		
+	}
+	/* CHANGE ROLE TO MANAGER */
+	public boolean changeToManager(String email) {
+		return repository.changeToManager(email) == 1 ? true : false;
+		
+	}
+	/* CHANGE ROLE TO USER */
+	public boolean changeToUser(String email) {
+		return repository.changeToUser(email) == 1 ? true : false;
 		
 	}
 }

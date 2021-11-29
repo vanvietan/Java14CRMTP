@@ -11,6 +11,6 @@ public class JspConst {
 	final public static String USER_UPDATE = 	"WEB-INF/views/user/user-update.jsp";
 	
 	//Role
-	public static final String ROLE_EDIT = 		"WEB-INF/views/user/role-edit.jsp";
+	public static final String ROLE_EDIT = 		"WEB-INF/views/role/role-edit.jsp";
 
 }

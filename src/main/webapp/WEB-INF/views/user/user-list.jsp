@@ -30,8 +30,7 @@
 	              <td>${user.email}</td>
 	              <td>${user.phone}</td>
 	              <td>${user.address}</td>
-	              <td>${role.name}</td>
-	              <td><a class="btn btn-sm btn-danger" href="<%= request.getContextPath() + UrlConst.USER_DELETE%>?email=${user.email}">Remove</a></td>
+	              <td>${user.role.description}</td>	       
 	            </tr>
           	</c:forEach>
           </tbody>
