@@ -4,13 +4,14 @@ import java.sql.Date;
 
 public class Task {
 	//Attribute
+	public User assignee = new User();
 	private int id;
 	private String name;
+	private String description;
 	private Date start_date;
 	private Date end_date;
-	private User user_id;
-	private Project job_id;
-	private Status status_id;
+	private Status status;
+	private Project project;
 	
 	//Constructor
 	public Task() {
@@ -26,24 +27,12 @@ public class Task {
 		this.name = name;
 	}
 
-	public void setStart_date(Date start_date) {
-		this.start_date = start_date;
+	public void setStart_date(Date startDate) {
+		this.start_date = startDate;
 	}
 
 	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
-	}
-
-	public void setUser_id(User user_id) {
-		this.user_id = user_id;
-	}
-
-	public void setJob_id(Project job_id) {
-		this.job_id = job_id;
-	}
-
-	public void setStatus_id(Status status_id) {
-		this.status_id = status_id;
 	}
 
 	public int getId() {
@@ -61,19 +50,42 @@ public class Task {
 	public Date getEnd_date() {
 		return end_date;
 	}
+	
+	public Task(int id, String name, String description, Date start_date, Date end_date, Status status, Project project, User assigne) {
 
-	public User getUser_id() {
-		return user_id;
 	}
 
-	public Project getJob_id() {
-		return job_id;
+	public User getAssignee() {
+		return assignee;
 	}
 
-	public Status getStatus_id() {
-		return status_id;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
+	public void setStatus(Status status) {
+		this.status = status;
+	}
+	
+	public void setAssignee(User assignee) {
+		this.assignee = assignee;
+	}
+	
+	public Project getProject() {
+		return project;
+	}
+	
+	public void setProject(Project project) {
+		this.project = project;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	
+	public Status getStatus() {
+		return status;
+	}
 	
 	
 }

@@ -61,7 +61,7 @@ public class UserRepository {
 			statement.setString(3, user.getName());
 			statement.setString(4, user.getPassword());
 			statement.setString(5, user.getPhone());
-						
+			statement.setInt(6, 1);						
 			return statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
@@ -194,6 +194,7 @@ public class UserRepository {
 		}				
 		return 0;
 	}
+
 	/* ROLE CHANGE TO ADMIN */
 	public int changeToAdmin(String email) {
 		try {
@@ -204,10 +205,10 @@ public class UserRepository {
 			return statement.executeUpdate();
 		}catch(SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
-			e.printStackTrace();
-		}
-		return 0;
-	}
+      e.printStackTrace();
+    }
+    return 0;
+  }
 	/* ROLE CHANGE TO MANAGER */
 	public int changeToManager(String email) {
 		try {
@@ -236,6 +237,7 @@ public class UserRepository {
 		}		
 		return 0;
 	}
+
 	
 	
 }

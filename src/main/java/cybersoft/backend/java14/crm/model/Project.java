@@ -8,16 +8,17 @@ public class Project {
 	private String name;
 	private Date start_date;
 	private Date end_date;
+	private String description;
+	private User create_user = new User();
 	
-	//Constructor
 	public Project() {
 		
 	}
-	public Project(int id,String name, Date start, Date end) {
+	public Project(int id, String name, Date start_date, Date end_date, String description, User create_user) {
 		this.id = id;
 		this.name = name;
-		this.start_date = start;
-		this.end_date = end;
+		this.start_date = start_date;
+		this.end_date = end_date;
 	}
 	public void setId(int id) {
 		this.id = id;
@@ -44,5 +45,16 @@ public class Project {
 		return end_date;
 	}
 	
-	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public User getCreate_user() {
+		return create_user;
+	}
+	public void setCreate_user(User create_user) {
+		this.create_user = create_user;
+	}
 }
