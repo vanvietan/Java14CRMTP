@@ -16,7 +16,7 @@ public class JspConst {
 	final public static String TEST = 			"WEB-INF/views/task/test.jsp";
 
 	//Role
-	public static final String ROLE_EDIT = 		"WEB-INF/views/user/role-edit.jsp";
+	public static final String ROLE_EDIT = 		"WEB-INF/views/role/role-edit.jsp";
 
 
 }

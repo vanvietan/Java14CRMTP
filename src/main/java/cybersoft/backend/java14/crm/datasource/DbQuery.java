@@ -14,6 +14,16 @@ public class DbQuery {
 	public static final String CHANGE_PASSWORD = "UPDATE crm_user SET password = ? WHERE email = ?";
 	public static final String CHANGE_PHONE = "UPDATE crm_user SET phone = ? WHERE email = ?";
 	public static final String CHANGE_ADDRESS = "UPDATE crm_user SET address = ? WHERE email = ?";
+
+
+	
+	/* ROLE CHANGE */
+	public static final String ROLE_TO_ADMIN = "UPDATE crm_user SET role = 1 WHERE email = ?";
+	public static final String ROLE_TO_MANAGER = "UPDATE crm_user SET role = 2 WHERE email = ?";
+	public static final String ROLE_TO_USER = "UPDATE crm_user SET role = 3 WHERE email = ?";
+
+
+
   
   /* TASK */
   public static final String TASK = "SELECT t.id as task_id, assignee, t.name as task_name, t.description as task_description, t.start_date as task_start_date, t.end_date as task_end_date,\r\n"
@@ -22,4 +32,5 @@ public class DbQuery {
 			+ " FROM crm_task t LEFT JOIN crm_status stt ON t.status = stt.id LEFT JOIN crm_project prj ON t.project = prj.id";
 	public static final String ADD_TASK = "INSERT INTO crm_task (name, description, start_date, end_date) VALUES (?, ?, ?, ?)";
 	public static final String REMOVE_TASK = "DELETE FROM crm_task WHERE id = ?";
+
 }

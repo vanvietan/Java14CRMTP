@@ -46,5 +46,9 @@ public class UrlConst {
 	//Role
 	public static final String ROLE_EDIT ="/role-edit";
 
+	public static final String ROLE_EDIT_ADMIN ="/role-edit/admin";
+	public static final String ROLE_EDIT_MANAGER ="/role-edit/manager";
+	public static final String ROLE_EDIT_USER = "/role-edit/user";
+
 }
 

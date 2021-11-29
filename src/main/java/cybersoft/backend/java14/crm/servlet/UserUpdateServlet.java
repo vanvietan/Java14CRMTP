@@ -65,21 +65,25 @@ public class UserUpdateServlet extends HttpServlet{
 			String changeEmail = req.getParameter("email");
 			service.changeEmail(changeEmail , emailSession);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
+			break;
 		/* CHANGE PASSWORD */
 		case UrlConst.USER_UPDATE_PASSWORD:
 			String changePassword = req.getParameter("password");
 			service.changePassword(changePassword , emailSession);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
+			break;
 		/* CHANGE PHONE */
 		case UrlConst.USER_UPDATE_PHONE:
 			String changePhone = req.getParameter("phone");
 			service.changePhone(changePhone , emailSession);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
+			break;
 		/* CHANGE ADDRESS */
 		case UrlConst.USER_UPDATE_ADDRESS:
 			String changeAddress = req.getParameter("address");
 			service.changeAddress(changeAddress , emailSession);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
+			break;
 		default:
 			break;
 		}
