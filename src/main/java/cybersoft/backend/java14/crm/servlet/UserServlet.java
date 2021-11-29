@@ -62,7 +62,8 @@ public class UserServlet extends HttpServlet{
 			user.setAddress(req.getParameter("address"));
 				
 			service.addUser(user);
-			resp.sendRedirect(req.getContextPath() + UrlConst.SIGNUP);			
+			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
+
 			break;	
 		
 		/* DELETE USER*/
@@ -71,6 +72,9 @@ public class UserServlet extends HttpServlet{
 			service.removeUser(removeEmail);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_LIST);
 			break;
+			
+		
+			
 			
 		/* LOGIN */
 		case UrlConst.AUTH_LOGIN:

@@ -18,17 +18,19 @@
               <th>Email</th>
               <th>Phone</th>
               <th>Address</th>
+              <th>Role</th>
               <th>#</th>
             </tr>
           </thead>
           <tbody>
-          	<c:forEach var="user" items="${users}">
+          	<c:forEach var="user" items="${users}" >
           		<tr>
 	              <td>${user.id}</td>
 	              <td>${user.name}</td>
 	              <td>${user.email}</td>
 	              <td>${user.phone}</td>
 	              <td>${user.address}</td>
+	              <td>${role.name}</td>
 	              <td><a class="btn btn-sm btn-danger" href="<%= request.getContextPath() + UrlConst.USER_DELETE%>?email=${user.email}">Remove</a></td>
 	            </tr>
           	</c:forEach>

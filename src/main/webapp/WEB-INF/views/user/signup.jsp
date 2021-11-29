@@ -99,7 +99,9 @@ p1 {text-align: left;}
 		<div class="row no-gutters ">
 			
 			<div class="col-lg-12 card-form__body card-body ">
+
 				<form action="<%= request.getContextPath()+UrlConst.USER_ADD %>" method="">
+
 					<div class="was-validated">
 						<div class="form-row">
 							<label for="validationSample01">Full name</label> 

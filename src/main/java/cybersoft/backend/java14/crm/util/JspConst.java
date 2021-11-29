@@ -5,14 +5,18 @@ public class JspConst {
 	final public static String HOME=			"WEB-INF/views/home.jsp";
 		
 	//User
-	public static final String USER_LIST =	"WEB-INF/views/user/user-list.jsp";
+	public static final String USER_LIST =		"WEB-INF/views/user/user-list.jsp";
 	final public static String LOGIN =			"WEB-INF/views/user/login.jsp";
 	final public static String SIGNUP =			"WEB-INF/views/user/signup.jsp";
-	final public static String USER_UPDATE = "WEB-INF/views/user/user-update.jsp";
+	final public static String USER_UPDATE = 	"WEB-INF/views/user/user-update.jsp";
 	
-	public static final String USER_DASHBOARD =	"WEB-INF/views/user/userlist.jsp";
+  //Task
 	final public static String TASK_LIST =		"WEB-INF/views/task/tasklist.jsp";
 	final public static String TASK_ADD =		"WEB-INF/views/task/add.jsp";
 	final public static String TEST = 			"WEB-INF/views/task/test.jsp";
+
+	//Role
+	public static final String ROLE_EDIT = 		"WEB-INF/views/user/role-edit.jsp";
+
 
 }
