@@ -13,6 +13,6 @@ public class JspConst {
 	public static final String USER_DASHBOARD =	"WEB-INF/views/user/userlist.jsp";
 	final public static String TASK_LIST =		"WEB-INF/views/task/tasklist.jsp";
 	final public static String TASK_ADD =		"WEB-INF/views/task/add.jsp";
-
+	final public static String TEST = 			"WEB-INF/views/task/test.jsp";
 
 }

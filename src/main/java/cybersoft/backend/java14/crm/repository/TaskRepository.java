@@ -1,7 +1,6 @@
 package cybersoft.backend.java14.crm.repository;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,8 +29,8 @@ public class TaskRepository {
 				task.setId(rs.getInt("task_id"));
 				task.setName(rs.getString("task_name"));
 				task.setDescription(rs.getString("task_description"));
-				task.setStart_date(rs.getLong("task_start_date"));
-				task.setEnd_date(rs.getLong("task_end_date"));
+				task.setStart_date(rs.getDate("task_start_date"));
+				task.setEnd_date(rs.getDate("task_end_date"));
 
 				Status status = new Status();
 				status.setId(rs.getInt("status_id"));;
@@ -71,8 +70,8 @@ public class TaskRepository {
 
 			statement.setString(1, task.getName());
 			statement.setString(2, task.getDescription());
-			statement.setDate(3, new java.sql.Date(task.getStart_date()));
-			statement.setDate(4, new java.sql.Date(task.getEnd_date()));
+			statement.setDate(3, task.getStart_date());				
+			statement.setDate(4, task.getEnd_date());
 
 			return statement.executeUpdate();
 		} catch (SQLException e) {

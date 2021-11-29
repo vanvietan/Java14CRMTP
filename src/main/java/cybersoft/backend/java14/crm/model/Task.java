@@ -8,8 +8,8 @@ public class Task {
 	private int id;
 	private String name;
 	private String description;
-	private Long start_date;
-	private Long end_date;
+	private Date start_date;
+	private Date end_date;
 	private Status status;
 	private Project project;
 	
@@ -27,11 +27,11 @@ public class Task {
 		this.name = name;
 	}
 
-	public void setStart_date(Long start_date) {
-		this.start_date = start_date;
+	public void setStart_date(Date startDate) {
+		this.start_date = startDate;
 	}
 
-	public void setEnd_date(Long end_date) {
+	public void setEnd_date(Date end_date) {
 		this.end_date = end_date;
 	}
 
@@ -43,15 +43,15 @@ public class Task {
 		return name;
 	}
 
-	public Long getStart_date() {
+	public Date getStart_date() {
 		return start_date;
 	}
 
-	public Long getEnd_date() {
+	public Date getEnd_date() {
 		return end_date;
 	}
 	
-	public Task(int id, String name, String description, Long start_date, Long end_date, Status status, Project project, User assigne) {
+	public Task(int id, String name, String description, Date start_date, Date end_date, Status status, Project project, User assigne) {
 
 	}
 

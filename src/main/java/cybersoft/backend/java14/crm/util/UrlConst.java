@@ -26,7 +26,7 @@ public class UrlConst {
 	
 	public static final String TASK = "/task";
 	public static final String TASK_DELETE = "/task/delete";
-	public static final String TASK_ADD = "/task/add";
+	public static final String TASK_ADD = "/task-add";
 	public static final String TASK_LIST = "/tasklist";
 
 }

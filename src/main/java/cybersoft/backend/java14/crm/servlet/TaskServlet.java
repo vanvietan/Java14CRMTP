@@ -19,7 +19,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet (name="taskServlet", urlPatterns= {
-		UrlConst.TASK_ADD,
 		UrlConst.TASK_DELETE,
 		UrlConst.TASK_LIST
 })
@@ -55,29 +54,9 @@ public class TaskServlet extends HttpServlet {
 				.forward(req, resp);
 			break;
 
-		/* ADD task */	
-		case UrlConst.TASK_ADD:
-
-			task.setName(req.getParameter("name"));
-			task.setDescription(req.getParameter("description"));
-
-			try {
-				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-				Date start_date = dateFormat.parse(req.getParameter("start_date"));
-				Date end_date = dateFormat.parse(req.getParameter("end_date"));
-				long start_dateInLong = start_date.getTime();
-				long end_dateInLong = end_date.getTime();
-				task.setStart_date(start_dateInLong);
-				task.setEnd_date(end_dateInLong);
-			} catch (ParseException e) {
-				System.out.println("can't get date");
-				e.printStackTrace();
-			}
-
-			service.addTask(task);
-			resp.sendRedirect(req.getContextPath() + UrlConst.SIGNUP);
-			break;	
-
+		/* ADD task */
+		/* case UrlConst.TASK_ADD: */
+			
 		/* DELETE task*/
 		case UrlConst.TASK_DELETE:
 			int taskId = Integer.parseInt(req.getParameter("id")) ;
