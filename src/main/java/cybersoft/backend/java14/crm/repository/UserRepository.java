@@ -62,6 +62,7 @@ public class UserRepository {
 			statement.setString(4, user.getPassword());
 			statement.setString(5, user.getPhone());
 			statement.setInt(6, 1);						
+
 			return statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
@@ -80,7 +81,6 @@ public class UserRepository {
 			PreparedStatement statement = connection.prepareStatement(query);
 			
 			statement.setString(1, userEmail);
-			
 			return statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
@@ -89,7 +89,7 @@ public class UserRepository {
 		
 		return 0;
 	}
-	
+
 	/* FIND USER */
 	public List<User> findUser(String emailSession) {
 		List<User> users = new LinkedList<User>();
@@ -237,7 +237,4 @@ public class UserRepository {
 		}		
 		return 0;
 	}
-
-	
-	
 }

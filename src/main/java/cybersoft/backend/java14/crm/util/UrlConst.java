@@ -26,10 +26,10 @@ public class UrlConst {
 	//User Update
 	public static final String USER_UPDATE = "/user-update";
 
-  //Task
+	//Task
 	public static final String TASK = "/task";
 	public static final String TASK_DELETE = "/task/delete";
-	public static final String TASK_ADD = "/task-add";
+	public static final String TASK_ADD = "/task/create-task";
 	public static final String TASK_LIST = "/tasklist";
 
 
@@ -50,5 +50,7 @@ public class UrlConst {
 	public static final String ROLE_EDIT_MANAGER ="/role-edit/manager";
 	public static final String ROLE_EDIT_USER = "/role-edit/user";
 
+	//PROJECT
+	public static final String PROJECT_ADD = "/project/create-project";
 }
 
