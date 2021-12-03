@@ -10,7 +10,6 @@
 </head>
 <body>
 	<h1 style="text-align:center;">Assign An Employee</h1>
-<%-- 			<form action="<%= request.getContextPath()+UrlConst.TASK_UPDATE_ASSIGNEE %>" > --%>
 				<div class="card card-form">
                     <div class="row no-gutters">
                         <div class="col-lg-12 card-form__body border-left">
@@ -48,6 +47,5 @@
                         </div>
                     </div>
                 </div>
-<!-- 			</form> -->
 </body>
 </html>

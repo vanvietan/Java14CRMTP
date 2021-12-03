@@ -36,8 +36,6 @@
 		              <td>${task.project}</td>
 		              <td>${task.assignee}</td>
 		              <td>${task.status}</td>
-		              <!-- <td><input value="Assign" class="btn btn-sm btn-primary" type="submit"></td>
-		              <td><input value="Delete" class="btn btn-sm btn-danger" type="submit"></td> -->
 		              <td><a class="btn btn-sm btn-primary" href="<%=request.getContextPath()+UrlConst.TASK_SHOW_LIST_USER%>?taskId=${task.id}">Assign An Employee</a></td>
 		              <td><a class="btn btn-sm btn-danger" href="<%=request.getContextPath()+UrlConst.TASK_DELETE%>?taskId=${task.id}">Delete Task</a></td>
 		            </tr>
