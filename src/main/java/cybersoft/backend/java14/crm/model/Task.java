@@ -4,14 +4,15 @@ import java.sql.Date;
 
 public class Task {
 	//Attribute
-	public User assignee = new User();
+//	private User assignee = new User();
+	private int assignee;
 	private int id;
 	private String name;
 	private String description;
 	private Date start_date;
 	private Date end_date;
-	private Status status;
-	private Project project;
+	private int status;
+	private int project;
 	
 	//Constructor
 	public Task() {
@@ -51,11 +52,11 @@ public class Task {
 		return end_date;
 	}
 	
-	public Task(int id, String name, String description, Date start_date, Date end_date, Status status, Project project, User assigne) {
+	public Task(int id, String name, String description, Date start_date, Date end_date, int status, int project, User assigne) {
 
 	}
 
-	public User getAssignee() {
+	public int getAssignee() {
 		return assignee;
 	}
 
@@ -63,19 +64,19 @@ public class Task {
 		this.description = description;
 	}
 	
-	public void setStatus(Status status) {
+	public void setStatus(int status) {
 		this.status = status;
 	}
 	
-	public void setAssignee(User assignee) {
+	public void setAssignee(int assignee) {
 		this.assignee = assignee;
 	}
 	
-	public Project getProject() {
+	public int getProject() {
 		return project;
 	}
 	
-	public void setProject(Project project) {
+	public void setProject(int project) {
 		this.project = project;
 	}
 	
@@ -83,9 +84,8 @@ public class Task {
 		return description;
 	}
 	
-	public Status getStatus() {
+	public int getStatus() {
 		return status;
 	}
-	
-	
+
 }

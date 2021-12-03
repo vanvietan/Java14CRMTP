@@ -30,7 +30,7 @@
 	              <td>${user.email}</td>
 	              <td>${user.phone}</td>
 	              <td>${user.address}</td>
-	              <td>${user.role.description}</td>	       
+	              <td>${user.role}</td>	       
 	            </tr>
           	</c:forEach>
           </tbody>

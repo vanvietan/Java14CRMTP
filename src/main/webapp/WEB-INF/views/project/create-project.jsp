@@ -12,7 +12,7 @@ h4 {text-align: center;}
 <body>
 <br>
 
-<h4> Create New Task!</h4>
+<h4> Create New Project!</h4>
 
 <p style="text-align:center;" class="mb-3">Work work work!</p>
 <form method="post" >

@@ -21,6 +21,16 @@ public class UserService {
 		return repository.getUsers();
 	}
 	
+	/* SHOW USER ID BY EMAIL */
+	public int getUserIdByEmail(String userEmail) {
+		return repository.getUserIdByEmail(userEmail);
+	}
+	
+	/* SHOW USER NAME BY ID */
+	public String getUserNameById(int userId) {
+		return repository.getUserNameById(userId);
+	}
+	
 	/* CREATE USER */
 	public boolean addUser(User user) {
 		return repository.addUser(user) == 1 ? true : false;
@@ -90,7 +100,6 @@ public class UserService {
 		
 	}
 
-	
 	public boolean deleteUser(int id) {
 		return true;
 		/* return repository.addDeleteUser(userId) == 1 ? true:false; */

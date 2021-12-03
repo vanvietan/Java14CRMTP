@@ -29,9 +29,10 @@ public class UrlConst {
 	//Task
 	public static final String TASK = "/task";
 	public static final String TASK_DELETE = "/task/delete";
-	public static final String TASK_ADD = "/task/create-task";
-	public static final String TASK_LIST = "/tasklist";
-
+	public static final String TASK_ADD = "/create-task";
+	public static final String TASK_LIST = "/task-list";
+	public static final String TASK_UPDATE_ASSIGNEE = "/update-assignee";
+	public static final String TASK_SHOW_LIST_USER = "/task-show-list-user";
 
 	public static final String USER_UPDATE_NAME ="/user-update/name";
 	public static final String USER_UPDATE_EMAIL ="/user-update/email";

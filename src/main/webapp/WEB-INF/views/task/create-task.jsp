@@ -6,16 +6,15 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-h4 {text-align: center;}
 </style>
 </head>
 <body>
 <br>
 
-<h4> Create New Task!</h4>
+<h4 style="text-align:center;"> Create New Task!</h4>
 
 <p style="text-align:center;" class="mb-3">Work work work!</p>
-<form method="post" >
+<form action="" method="post" >
 <div class="container page__container ">
 	<!-- Page Content -->
 	<div class="card card-form ">
@@ -65,10 +64,8 @@ h4 {text-align: center;}
 	                        </div>
 	                    </div>
                     </div>
-					
-				
-				
-				<button type="submit" value="create" class="btn btn-primary">Create</button>	
+
+				<button type="submit" value="create" class="btn btn-primary">Assign An Employee</button>	
 				
 			</div>
 		</div>

@@ -3,6 +3,7 @@ package cybersoft.backend.java14.crm.servlet;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.sql.Date;
 
 import javax.servlet.ServletException;
@@ -10,9 +11,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.Document;
 
 import cybersoft.backend.java14.crm.model.Task;
+import cybersoft.backend.java14.crm.model.User;
 import cybersoft.backend.java14.crm.service.TaskService;
+import cybersoft.backend.java14.crm.service.UserService;
 import cybersoft.backend.java14.crm.util.JspConst;
 import cybersoft.backend.java14.crm.util.UrlConst;
 
@@ -20,14 +24,18 @@ import cybersoft.backend.java14.crm.util.UrlConst;
 		UrlConst.TASK_ADD
 })
 public class TaskCreateServlet extends HttpServlet {
-	private TaskService service;
+	private TaskService taskService;
+	private UserService userService;
 	private Task task;
 	private String sd, ed;
+
 	@Override
 	public void init() throws ServletException {
 		super.init();
-		service = new TaskService();
+		taskService = new TaskService();
 		task = new Task();
+		userService = new UserService();
+		
 	}
 	
 	@Override
@@ -52,9 +60,11 @@ public class TaskCreateServlet extends HttpServlet {
 				
 			task.setStart_date(sqlsd);
 			task.setEnd_date(sqled);
- 
-			service.addTask(task);
-			resp.sendRedirect(req.getContextPath() + UrlConst.HOME);
+			task.setAssignee(1);
+			task.setStatus(3);
+			task.setProject(1);
+			taskService.addTask(task);
+			resp.sendRedirect(req.getContextPath() + UrlConst.TASK_SHOW_LIST_USER);
 		}
 	}
 }

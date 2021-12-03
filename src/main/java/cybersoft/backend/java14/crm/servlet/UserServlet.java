@@ -76,13 +76,13 @@ public class UserServlet extends HttpServlet{
 			
 		case UrlConst.USER_ADD:
 			User user = new User();
-			user.setAddress("address");
+			user.setAddress(req.getParameter("address"));
 			user.setName(req.getParameter("name"));
-			user.setPassword("password");
-			user.setEmail("email");
-			user.setPhone("phone");
+			user.setPassword(req.getParameter("password"));
+			user.setEmail(req.getParameter("email"));
+			user.setPhone(req.getParameter("phone"));
 			service.addUser(user);
-			resp.sendRedirect(req.getContextPath() + "/users");
+			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
 			break;
 
 		default:

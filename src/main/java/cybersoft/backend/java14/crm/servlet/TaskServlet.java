@@ -20,12 +20,13 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet (name="taskServlet", urlPatterns= {
 		UrlConst.TASK_DELETE,
-		UrlConst.TASK_LIST
+		UrlConst.TASK_UPDATE_ASSIGNEE
 })
 public class TaskServlet extends HttpServlet {
 	private String action;
 	private TaskService service;
 	private Task task;
+	private int userId, taskId;
 
 	@Override
 	public void init() throws ServletException {
@@ -47,21 +48,27 @@ public class TaskServlet extends HttpServlet {
 		switch (action) {
 
 		/* SHOW LIST task */
-		case UrlConst.TASK_LIST:
-			List<Task> tasks = service.getTasks();
-			req.setAttribute("tasks", tasks);
-			req.getRequestDispatcher(JspConst.TASK_LIST)
-				.forward(req, resp);
-			break;
+//		case UrlConst.TASK_LIST:
+//			List<Task> tasks = service.getTasks();
+//			req.setAttribute("tasks", tasks);
+//			req.getRequestDispatcher(JspConst.TASK_LIST)
+//				.forward(req, resp);
+//			break;
 
-		/* ADD task */
-		/* case UrlConst.TASK_ADD: */
+		/* UPDATE ASSIGNEE */
+		case UrlConst.TASK_UPDATE_ASSIGNEE:
+			userId = Integer.parseInt(req.getParameter("userId"));
+			taskId = Integer.parseInt(req.getParameter("taskId"));
+			service.updateAssignee(userId , taskId);
+			resp.sendRedirect(req.getContextPath() + UrlConst.TASK_LIST);
+			break;
+			
 			
 		/* DELETE task*/
 		case UrlConst.TASK_DELETE:
-			int taskId = Integer.parseInt(req.getParameter("id")) ;
+			taskId = Integer.parseInt(req.getParameter("taskId")) ;
 			service.deleteTask(taskId);
-			resp.sendRedirect(req.getContextPath() + UrlConst.TASK_DELETE);
+			resp.sendRedirect(req.getContextPath() + UrlConst.TASK_LIST);
 			break;
 
 		default:
