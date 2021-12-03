@@ -21,7 +21,7 @@ public class TaskService {
 	}
 
 	public boolean deleteTask(int taskId) {
-		return true;
+		return repository.removeTask(taskId) == 1 ?true: false;
 	}
 	
 	public boolean updateAssignee(int taskId, int userId) {

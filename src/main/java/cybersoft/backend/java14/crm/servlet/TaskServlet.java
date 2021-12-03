@@ -1,11 +1,7 @@
 package cybersoft.backend.java14.crm.servlet;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Date;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -13,14 +9,15 @@ import cybersoft.backend.java14.crm.model.Task;
 import cybersoft.backend.java14.crm.service.TaskService;
 import cybersoft.backend.java14.crm.util.JspConst;
 import cybersoft.backend.java14.crm.util.UrlConst;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @WebServlet (name="taskServlet", urlPatterns= {
+		UrlConst.TASK_UPDATE_ASSIGNEE,
 		UrlConst.TASK_DELETE,
-		UrlConst.TASK_UPDATE_ASSIGNEE
+		UrlConst.TASK_LIST
 })
 public class TaskServlet extends HttpServlet {
 	private String action;
@@ -33,8 +30,6 @@ public class TaskServlet extends HttpServlet {
 		super.init();
 		service = new TaskService();
 		task = new Task();
-		action="";
-
 	}
 
 	@Override
@@ -48,12 +43,12 @@ public class TaskServlet extends HttpServlet {
 		switch (action) {
 
 		/* SHOW LIST task */
-//		case UrlConst.TASK_LIST:
-//			List<Task> tasks = service.getTasks();
-//			req.setAttribute("tasks", tasks);
-//			req.getRequestDispatcher(JspConst.TASK_LIST)
-//				.forward(req, resp);
-//			break;
+		case UrlConst.TASK_LIST:
+			List<Task> tasks = service.getTasks();
+			req.setAttribute("tasks", tasks);
+			req.getRequestDispatcher(JspConst.TASK_LIST)
+				.forward(req, resp);
+			break;
 
 		/* UPDATE ASSIGNEE */
 		case UrlConst.TASK_UPDATE_ASSIGNEE:
@@ -62,7 +57,6 @@ public class TaskServlet extends HttpServlet {
 			service.updateAssignee(userId , taskId);
 			resp.sendRedirect(req.getContextPath() + UrlConst.TASK_LIST);
 			break;
-			
 			
 		/* DELETE task*/
 		case UrlConst.TASK_DELETE:
@@ -75,6 +69,4 @@ public class TaskServlet extends HttpServlet {
 			break;
 		}
 	}
-
-
 }

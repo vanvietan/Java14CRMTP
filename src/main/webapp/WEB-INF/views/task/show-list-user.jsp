@@ -11,7 +11,6 @@
 <body>
 	<h1 style="text-align:center;">Assign An Employee</h1>
 <%-- 			<form action="<%= request.getContextPath()+UrlConst.TASK_UPDATE_ASSIGNEE %>" > --%>
-				<input type="hidden" value="${tId}">
 				<div class="card card-form">
                     <div class="row no-gutters">
                         <div class="col-lg-12 card-form__body border-left">
@@ -40,7 +39,7 @@
 		                                      <td>${user.name}</td>
 		                                      <td>${user.email}</td>
 		                                      <td>${user.phone}</td>
-								              <td><a class="btn btn-sm btn-danger" href="<%= request.getContextPath() + UrlConst.TASK_UPDATE_ASSIGNEE%>?taskId=${task.id}">Assign</a></td>
+		                                      <td><a class="btn btn-sm btn-primary" href="<%=request.getContextPath()+UrlConst.TASK_UPDATE_ASSIGNEE%>?taskId=${taskId}&userId=${user.id}">Assign An Employee</a></td>
 								            </tr>
 							          	</c:forEach>
                                     </tbody>

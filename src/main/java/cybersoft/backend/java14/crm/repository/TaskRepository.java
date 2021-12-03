@@ -94,7 +94,7 @@ public class TaskRepository {
 	public int updateAssignee(int userId, int taskId) {
 		try {
 			Connection connection = MySQLConnection.getConnection();
-			String query = DbQuery.CHANGE_NAME;
+			String query = DbQuery.UPDATE_ASSIGNEE;
 			PreparedStatement statement = connection.prepareStatement(query);
 			statement.setInt(1, userId);
 			statement.setInt(2, taskId);
