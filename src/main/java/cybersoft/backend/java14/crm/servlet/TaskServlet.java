@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 		UrlConst.TASK_LIST,
 		UrlConst.TASK_ADD,
 		UrlConst.TASK_SHOW_LIST_USER,
-		UrlConst.TASK_LIST_BY_PROJECT
+		UrlConst.TASK_LIST_IN_PROJECT
 })
 public class TaskServlet extends HttpServlet {
 	private String action;
@@ -69,12 +69,12 @@ public class TaskServlet extends HttpServlet {
 			break;
 		
 		/* SHOW LIST TASK IN PROJECT */
-		case UrlConst.TASK_LIST_BY_PROJECT:
-			List<Task> task = service.getTaskInProject();
-			req.setAttribute("tasks", task);
-			req.getRequestDispatcher(JspConst.TASK_LIST)
-				.forward(req, resp);
-			break;
+//		case UrlConst.TASK_LIST_IN_PROJECT:
+//			List<Task> task = service.getTaskInProject();
+//			req.setAttribute("tasks", task);
+//			req.getRequestDispatcher(JspConst.TASK_LIST)
+//				.forward(req, resp);
+//			break;
 		/* UPDATE ASSIGNEE */
 		case UrlConst.TASK_UPDATE_ASSIGNEE:
 			userId = Integer.parseInt(req.getParameter("userId"));

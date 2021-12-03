@@ -9,12 +9,12 @@
 <title>Project List</title>
 </head>
 <body>
-<h1 style="text-align:center;"> Create New Project!</h1>
+<h1 style="text-align:center;"> Project List!</h1>
 		<table class="table mt-5">
 	          <thead>
 	            <tr>
-	              <th style="width: 50px;">ID</th>
-	              <th style="width: 100px;">Name</th>
+	              <th style="width: 100px;">ID</th>
+	              <th style="width: 150px;">Name</th>
 	              <th style="width: 870px;">Description</th>
 	              <th>Start Date</th>
 	              <th>End Date</th>
@@ -34,7 +34,7 @@
 		              <td>${project.end_date}</td>
 		              <td>${project.create_user}</td>
 		              <td>${project.status}</td>
-		              <td><a class="btn btn-sm btn-danger" href="<%=request.getContextPath()+UrlConst.TASK_ADD%>?projectId=${project.id}">Add Task</a></td>
+		              <td><a class="btn btn-sm btn-primary" href="<%=request.getContextPath()+UrlConst.TASK_ADD%>?projectId=${project.id}">Add Task</a></td>
 		              <td><a class="btn btn-sm btn-danger" href="<%=request.getContextPath()+UrlConst.PROJECT_DELETE%>?projectId=${project.id}">Delete Project</a></td>
 		            </tr>
 	          	</c:forEach>

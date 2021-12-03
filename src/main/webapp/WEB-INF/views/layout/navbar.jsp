@@ -19,11 +19,11 @@
                             Project
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.PROJECT%>">
+                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.PROJECT_LIST%>">
                                 Manage Project
                             </a>
-                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.PROJECT_LIST%>">
-                                Project Create Project
+                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.PROJECT_ADD%>">
+                                Create Project
                             </a>
                         </div>
                     </li>
@@ -32,10 +32,10 @@
                             User
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="userlist">
+                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.USER_LIST%>">
                                 User List
                             </a>
-                            <a class="dropdown-item" href="signup">
+                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.SIGNUP%>">
                                 Create User
                             </a>
                         </div>

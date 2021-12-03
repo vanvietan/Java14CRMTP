@@ -19,8 +19,8 @@ public class JspConst {
 	public static final String ROLE_EDIT = 			"WEB-INF/views/role/role-edit.jsp";
 	
 	//Project
-	public static final String PROJECT_ADD = 		"WEB-INF/views/create-project.jsp";
-	final public static String PROJECT_LIST =		"WEB-INF/views/project-list.jsp";
-	public static final String PROJECT = 			"WEB-INF/views/project";
+	public static final String PROJECT_ADD = 		"WEB-INF/views/project/create-project.jsp";
+	final public static String PROJECT_LIST =		"WEB-INF/views/project/project-list.jsp";
+	public static final String PROJECT = 			"WEB-INF/views/project/project";
 
 }

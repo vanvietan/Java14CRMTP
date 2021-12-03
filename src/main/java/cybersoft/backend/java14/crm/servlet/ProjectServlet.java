@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet (name="taskServlet", urlPatterns= {
+@WebServlet (name="projectServlet", urlPatterns= {
 		UrlConst.PROJECT_ADD,
 		UrlConst.PROJECT_LIST,
 		UrlConst.PROJECT_DELETE,

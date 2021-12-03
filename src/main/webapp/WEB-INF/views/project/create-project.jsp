@@ -11,7 +11,7 @@
 <body>
 <br>
 
-<h4 style="text-align:center;"> Create New Task!</h4>
+<h4 style="text-align:center;"> Create New Project!</h4>
 
 <p style="text-align:center;" class="mb-3">Work work work!</p>
 <form action="" method="post" >
