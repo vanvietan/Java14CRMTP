@@ -56,6 +56,7 @@ public class TaskServlet extends HttpServlet {
 		/* ADD task */
 		case UrlConst.TASK_ADD:
 			projectId = Integer.parseInt(req.getParameter("projectId"));
+			task.setProject(projectId);
 			req.getRequestDispatcher(JspConst.TASK_ADD)
 			.forward(req, resp);
 			break;
@@ -69,12 +70,14 @@ public class TaskServlet extends HttpServlet {
 			break;
 		
 		/* SHOW LIST TASK IN PROJECT */
-//		case UrlConst.TASK_LIST_IN_PROJECT:
-//			List<Task> task = service.getTaskInProject();
-//			req.setAttribute("tasks", task);
-//			req.getRequestDispatcher(JspConst.TASK_LIST)
-//				.forward(req, resp);
-//			break;
+		case UrlConst.TASK_LIST_IN_PROJECT:
+			projectId = Integer.parseInt(req.getParameter("projectId"));
+			List<Task> task = service.getTaskInProject(projectId);
+			req.setAttribute("tasks", task);
+			req.getRequestDispatcher(JspConst.TASK_LIST)
+				.forward(req, resp);
+			break;
+			
 		/* UPDATE ASSIGNEE */
 		case UrlConst.TASK_UPDATE_ASSIGNEE:
 			userId = Integer.parseInt(req.getParameter("userId"));

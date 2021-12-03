@@ -57,5 +57,6 @@ public class UrlConst {
 	public static final String PROJECT = "/project";
 	public static final String PROJECT_DELETE = "/project-delete";
 	public static final String PROJECT_LIST = "/project-list";
+	public static final String PROJECT_CREATED_BY_LIST = "/project-created-by-list";
 }
 

@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet (name="projectServlet", urlPatterns= {
 		UrlConst.PROJECT_ADD,
 		UrlConst.PROJECT_LIST,
+		UrlConst.PROJECT_CREATED_BY_LIST,
 		UrlConst.PROJECT_DELETE,
 		UrlConst.PROJECT
 })
@@ -55,13 +56,13 @@ public class ProjectServlet extends HttpServlet {
 			.forward(req, resp);
 			break;
 			
-		/* ADD task */
+		/* ADD PROJECT */
 		case UrlConst.PROJECT_ADD:
 			req.getRequestDispatcher(JspConst.PROJECT_ADD)
 			.forward(req, resp);
 			break;
 			
-		/* SHOW LIST task */
+		/* SHOW LIST PROJECT */
 		case UrlConst.PROJECT_LIST:
 			List<Project> projects = service.getProjects();
 			req.setAttribute("projects", projects);
@@ -69,11 +70,19 @@ public class ProjectServlet extends HttpServlet {
 				.forward(req, resp);
 			break;
 
-		/* DELETE task */
+		/* DELETE PROJECT */
 		case UrlConst.PROJECT_DELETE:
 			projectId = Integer.parseInt(req.getParameter("projectId")) ;
 			service.deleteProject(projectId);
 			resp.sendRedirect(req.getContextPath() + UrlConst.PROJECT_LIST);
+			break;
+			
+		/* SHOW LIST PROJECT CREATED BY */
+		case UrlConst.PROJECT_CREATED_BY_LIST:
+			List<Project> project = service.getProjects();
+			req.setAttribute("projects", project);
+			req.getRequestDispatcher(JspConst.PROJECT_LIST)
+				.forward(req, resp);
 			break;
 
 		
@@ -88,8 +97,6 @@ public class ProjectServlet extends HttpServlet {
 			email = (String) req.getSession().getAttribute("email");
 			userId = userService.getUserIdByEmail(email);
 			
-			project.setName(req.getParameter("name"));
-			project.setDescription(req.getParameter("description"));
 			sd = req.getParameter("start_date").replace("-","");
 			ed = req.getParameter("end_date").replace("-","");
 			
@@ -98,11 +105,12 @@ public class ProjectServlet extends HttpServlet {
 				
 			java.sql.Date sqlsd = Date.valueOf(start_date);
 			java.sql.Date sqled = Date.valueOf(end_date);
-				
+			
+			project.setName(req.getParameter("name"));
+			project.setDescription(req.getParameter("description"));	
 			project.setStart_date(sqlsd);
 			project.setEnd_date(sqled);
-			project.setCreate_user(userId);
-			project.setStatus(3);
+			project.setCreate_user(1);
 			service.addProject(project);
 			resp.sendRedirect(req.getContextPath() + UrlConst.PROJECT_LIST);
 		}

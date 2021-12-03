@@ -35,6 +35,8 @@ public class DbQuery {
 	public static final String UPDATE_ASSIGNEE = "UPDATE crm_task SET assignee = ? WHERE id = ?";
 
 	/* PROJECT */
-	public static final String ADD_PROJECT = "INSERT INTO crm_project (name, description, start_date, end_date) VALUES (?, ?, ?, ?)";
+	public static final String ADD_PROJECT = "INSERT INTO crm_project (name, description, start_date, end_date, create_user) VALUES (?, ?, ?, ?, ?)";
 	public static final String REMOVE_PROJECT = "DELETE FROM crm_task WHERE id = ?";
+	public static final String PROJECT_LIST = "SELECT p.id as project_id, p.create_user as project_create_user, p.name as project_name, p.description as project_description, p.start_date as project_start_date, p.end_date as project_end_date, u.id as user_id, u.name as user_name, u.email as user_email, u.password as user_password, u.phone as user_phone, u.address as user_address, u.role as user_role FROM crm_project p LEFT JOIN crm_user u ON p.create_user = u.id";
+	public static final String PROJECT_CREATED_BY_LIST = "SELECT p.id as project_id, p.create_user as project_create_user, p.name as project_name, p.description as project_description, p.start_date as project_start_date, p.end_date as project_end_date, u.id as user_id, u.name as user_name, u.email as user_email, u.password as user_password, u.phone as user_phone, u.address as user_address, u.role as user_role FROM crm_project p LEFT JOIN crm_user u ON p.create_user = u.id WHERE p.create_user = ?";
 }

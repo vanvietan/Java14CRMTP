@@ -19,7 +19,6 @@
 	              <th>Start Date</th>
 	              <th>End Date</th>
 	              <th>Created By User</th>
-	              <th>Status</th>
 	              <th>Create Task</th>
 	              <th>Delete Project</th>
 	            </tr>
@@ -28,12 +27,11 @@
 	          	<c:forEach var="project" items="${projects}">
 	          		<tr>
 		              <td>${project.id}</td>
-		              <td><a href="<%=request.getContextPath()+UrlConst.PROJECT%>">${project.name}</a></td>
+		              <td><a href="<%=request.getContextPath()+UrlConst.TASK_LIST_IN_PROJECT%>?projectId=${project.id}">${project.name}</a></td>
 		              <td>${project.description}</td>
 		              <td>${project.start_date}</td>
 		              <td>${project.end_date}</td>
 		              <td>${project.create_user}</td>
-		              <td>${project.status}</td>
 		              <td><a class="btn btn-sm btn-primary" href="<%=request.getContextPath()+UrlConst.TASK_ADD%>?projectId=${project.id}">Add Task</a></td>
 		              <td><a class="btn btn-sm btn-danger" href="<%=request.getContextPath()+UrlConst.PROJECT_DELETE%>?projectId=${project.id}">Delete Project</a></td>
 		            </tr>

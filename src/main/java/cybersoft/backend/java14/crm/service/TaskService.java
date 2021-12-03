@@ -16,8 +16,8 @@ public class TaskService {
 		return repository.getTasks();
 	}
 	
-	public List<Task> getTaskInProject() {
-		return repository.getTaskInProject();
+	public List<Task> getTaskInProject(int projectId) {
+		return repository.getTaskInProject(projectId);
 	}
 	
 	public boolean addTask(Task task) {
