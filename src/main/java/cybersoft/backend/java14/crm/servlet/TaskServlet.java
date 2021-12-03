@@ -30,7 +30,7 @@ public class TaskServlet extends HttpServlet {
 	private String action;
 	private TaskService service;
 	private Task task;
-	private int userId, taskId;
+	private int userId, taskId, projectId;
 	private String sd, ed;
 	private UserService userService;
 
@@ -54,6 +54,7 @@ public class TaskServlet extends HttpServlet {
 		
 		/* ADD task */
 		case UrlConst.TASK_ADD:
+			projectId = Integer.parseInt(req.getParameter("projectId"));
 			req.getRequestDispatcher(JspConst.TASK_ADD)
 			.forward(req, resp);
 			break;
@@ -114,7 +115,7 @@ public class TaskServlet extends HttpServlet {
 			task.setEnd_date(sqled);
 			task.setAssignee(1);
 			task.setStatus(3);
-			task.setProject(1);
+			task.setProject(projectId);
 			service.addTask(task);
 			resp.sendRedirect(req.getContextPath() + UrlConst.TASK_LIST);
 		}

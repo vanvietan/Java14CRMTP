@@ -52,6 +52,9 @@ public class UrlConst {
 	public static final String ROLE_EDIT_USER = "/role-edit/user";
 
 	//PROJECT
-	public static final String PROJECT_ADD = "/project/create-project";
+	public static final String PROJECT_ADD = "/create-project";
+	public static final String PROJECT = "/project";
+	public static final String PROJECT_DELETE = "/project-delete";
+	public static final String PROJECT_LIST = "/project-list";
 }
 

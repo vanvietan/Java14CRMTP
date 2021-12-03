@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="cybersoft.backend.java14.crm.util.UrlConst" %>
 <div class="page__header mb-0">
     <div class="container page__container">
         <div class="navbar navbar-secondary navbar-light navbar-expand-sm p-0">
@@ -18,10 +19,10 @@
                             Project
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.PROJECT%>">
                                 Manage Project
                             </a>
-                            <a class="dropdown-item" href="project/create-project">
+                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.PROJECT_LIST%>">
                                 Project Create Project
                             </a>
                         </div>
@@ -44,10 +45,10 @@
                             Task
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="task-list">
+                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.TASK_LIST%>">
                                 Task List
                             </a>
-                            <a class="dropdown-item" href="create-task">
+                            <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.PROJECT_LIST%>">
                                 Create Task
                             </a>
                         </div>

@@ -24,7 +24,7 @@
 				
 					<div class="was-validated">
 						<div class="form-row">
-							<label for="validationSample01">Task name</label> 
+							<label for="validationSample01">Task Name</label> 
 							<div class="col-12 col-md-12 mb-3 input-group input-group-merge">
 								<input type="text" class="form-control" name="name"
 									placeholder="Enter task name" required="" >
@@ -65,7 +65,7 @@
 	                    </div>
                     </div>
 
-				<button type="submit" value="create" class="btn btn-primary">Assign An Employee</button>	
+				<button type="submit" value="create" class="btn btn-primary">Create</button>	
 				
 			</div>
 		</div>

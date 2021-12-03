@@ -78,4 +78,18 @@ public class ProjectRepository {
 
 		return 0;
 	}
+	
+	public int getUserId(User email) {
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.GET_USER_ID_BY_EMAIL;
+			PreparedStatement statement = connection.prepareStatement(query);
+			return statement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
 }

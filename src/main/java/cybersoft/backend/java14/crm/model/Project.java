@@ -10,11 +10,13 @@ public class Project {
 	private Date end_date;
 	private String description;
 	private int create_user;
+	private int status;
+	
 	
 	public Project() {
 		
 	}
-	public Project(int id, String name, Date start_date, Date end_date, String description, int create_user) {
+	public Project(int id, String name, Date start_date, Date end_date, String description, int create_user, int status) {
 		this.id = id;
 		this.name = name;
 		this.start_date = start_date;
@@ -56,5 +58,12 @@ public class Project {
 	}
 	public void setCreate_user(int userId) {
 		this.create_user = userId;
+	}
+	
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
 	}
 }
