@@ -6,33 +6,34 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Task List</title>
+<title>User List</title>
 </head>
 <body>
-	<h1>Task List</h1>
+	<h1>User List</h1>
 	<table class="table mt-5">
           <thead>
             <tr>
               <th>ID</th>
               <th>Name</th>
-              <th>Description</th>
-              <th>Start Date</th>
-              <th>End Date</th>
-              <th>Project</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th>Role</th>
+              <th>#</th>
             </tr>
           </thead>
           <tbody>
-          	<c:forEach var="task" items="${tasks}">
+          	<c:forEach var="user" items="${users}" >
           		<tr>
-	              <td>${task.id}</td>
-	              <td>${task.name}</td>
-	              <td>${task.description}</td>
-	              <td>${task.start_date}</td>
-	              <td>${task.end_date}</td>
-	              <td>${project.name}</td>
+	              <td>${user.id}</td>
+	              <td>${user.name}</td>
+	              <td>${user.email}</td>
+	              <td>${user.phone}</td>
+	              <td>${user.address}</td>
+	              <td>${user.role.description}</td>	       
 	            </tr>
           	</c:forEach>
           </tbody>
        </table>
 </body>
-</html> 
+</html>

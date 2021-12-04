@@ -9,12 +9,12 @@ public class Project {
 	private Date start_date;
 	private Date end_date;
 	private String description;
-	private User create_user = new User();
+	private int create_user;
 	
 	public Project() {
 		
 	}
-	public Project(int id, String name, Date start_date, Date end_date, String description, User create_user) {
+	public Project(int id, String name, Date start_date, Date end_date, String description, int create_user) {
 		this.id = id;
 		this.name = name;
 		this.start_date = start_date;
@@ -51,10 +51,10 @@ public class Project {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public User getCreate_user() {
+	public int getCreate_user() {
 		return create_user;
 	}
-	public void setCreate_user(User create_user) {
-		this.create_user = create_user;
+	public void setCreate_user(int userId) {
+		this.create_user = userId;
 	}
 }

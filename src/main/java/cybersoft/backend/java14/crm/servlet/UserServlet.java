@@ -52,20 +52,7 @@ public class UserServlet extends HttpServlet{
 			req.getRequestDispatcher(JspConst.USER_LIST)
 				.forward(req, resp);
 			break;
-			
-		/* ADD USER */	
-		case UrlConst.USER_ADD:
-			user.setName(req.getParameter("name"));
-			user.setEmail(req.getParameter("email"));
-			user.setPassword(req.getParameter("password"));
-			user.setPhone(req.getParameter("phone"));
-			user.setAddress(req.getParameter("address"));
-				
-			service.addUser(user);
-			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
 
-			break;	
-		
 		/* DELETE USER*/
 		case UrlConst.USER_DELETE:
 			String removeEmail = req.getParameter("email") ;
@@ -87,6 +74,17 @@ public class UserServlet extends HttpServlet{
 				resp.sendRedirect(req.getContextPath() + UrlConst.LOGIN);
 			}
 			
+		case UrlConst.USER_ADD:
+			User user = new User();
+			user.setAddress(req.getParameter("address"));
+			user.setName(req.getParameter("name"));
+			user.setPassword(req.getParameter("password"));
+			user.setEmail(req.getParameter("email"));
+			user.setPhone(req.getParameter("phone"));
+			service.addUser(user);
+			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
+			break;
+
 		default:
 			break;
 		}

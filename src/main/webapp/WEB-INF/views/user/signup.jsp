@@ -100,7 +100,7 @@ p1 {text-align: left;}
 			
 			<div class="col-lg-12 card-form__body card-body ">
 
-				<form action="<%= request.getContextPath()+UrlConst.USER_ADD %>" method="">
+				<form action="<%= request.getContextPath()+UrlConst.USER_ADD %>" method="get">
 
 					<div class="was-validated">
 						<div class="form-row">
@@ -132,7 +132,7 @@ p1 {text-align: left;}
 			                    </div>
 								<div class="invalid-feedback">Please provide your email.</div>
 								<div class="valid-feedback">Looks good!</div>
-								<div class="input-group-prepend">
+								<div class="input-group-prepend"></div>
 							</div>
 						</div>
 					</div>
@@ -257,10 +257,10 @@ p1 {text-align: left;}
 								to terms and conditions </label>
 						</div>
 					</div>
-				
+				<button type="submit" value="submit" class="btn btn-primary">Submit</button>		
 				</form>			
 				
-				<button type="submit" value="submit" class="btn btn-primary">Submit</button>		
+				
 				
 			</div>
 		</div>

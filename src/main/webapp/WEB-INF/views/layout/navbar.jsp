@@ -21,7 +21,7 @@
                             <a class="dropdown-item" href="#">
                                 Manage Project
                             </a>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="project/create-project">
                                 Project Create Project
                             </a>
                         </div>
@@ -39,18 +39,16 @@
                             </a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Task</a>
-                     <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                             Task
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="userlist">
+                            <a class="dropdown-item" href="task-list">
                                 Task List
                             </a>
-                            <a class="dropdown-item" href="task-add">
-                                Add Task
+                            <a class="dropdown-item" href="create-task">
+                                Create Task
                             </a>
                         </div>
                     </li>
