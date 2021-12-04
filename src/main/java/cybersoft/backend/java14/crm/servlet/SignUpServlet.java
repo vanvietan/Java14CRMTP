@@ -22,10 +22,10 @@ public class SignUpServlet extends HttpServlet{
 			.forward(req, resp);
 	}
 	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		if ("submit" != null) {
-			resp.sendRedirect(req.getContextPath() + UrlConst.USER_ADD); 
-		}
-	}
+//	@Override
+//	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		if ("submit" != null) {
+//			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN); 
+//		}
+//	}
 }

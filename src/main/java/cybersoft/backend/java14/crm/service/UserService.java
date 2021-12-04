@@ -4,18 +4,31 @@ import java.util.List;
 
 import cybersoft.backend.java14.crm.model.User;
 import cybersoft.backend.java14.crm.repository.UserRepository;
+import cybersoft.backend.java14.crm.model.User;
 
 public class UserService {
+
 	private UserRepository repository;
 
 	public UserService() {
 		repository = new UserRepository();
 	}
 	
+
 	/* SHOW LIST*/
 	public List<User> getUsers() {
 
 		return repository.getUsers();
+	}
+	
+	/* SHOW USER ID BY EMAIL */
+	public int getUserIdByEmail(String userEmail) {
+		return repository.getUserIdByEmail(userEmail);
+	}
+	
+	/* SHOW USER NAME BY ID */
+	public String getUserNameById(int userId) {
+		return repository.getUserNameById(userId);
 	}
 	
 	/* CREATE USER */
@@ -86,4 +99,10 @@ public class UserService {
 		return repository.changeToUser(email) == 1 ? true : false;
 		
 	}
+
+	public boolean deleteUser(int id) {
+		return true;
+		/* return repository.addDeleteUser(userId) == 1 ? true:false; */
+	}
+	
 }

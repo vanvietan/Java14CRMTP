@@ -10,94 +10,77 @@ import java.util.List;
 import cybersoft.backend.java14.crm.datasource.DbQuery;
 import cybersoft.backend.java14.crm.datasource.MySQLConnection;
 import cybersoft.backend.java14.crm.model.Project;
-import cybersoft.backend.java14.crm.model.Status;
-import cybersoft.backend.java14.crm.model.Task;
 import cybersoft.backend.java14.crm.model.User;
 
-public class TaskRepository {
-	public List<Task> getTasks() {
-		List<Task> tasks = new LinkedList<Task>();
+
+public class ProjectRepository {
+	public List<Project> getProjects() {
+		List<Project> projects = new LinkedList<Project>();
 		try {
 			Connection connection = MySQLConnection.getConnection();
-			String query = DbQuery.TASK_LIST;
+			String query = DbQuery.PROJECT_LIST;
 
 			PreparedStatement statement = connection.prepareStatement(query);
 			ResultSet rs = statement.executeQuery();
 
 			while(rs.next()) {
-				Task task = new Task();
-				task.setId(rs.getInt("task_id"));
-				task.setName(rs.getString("task_name"));
-				task.setDescription(rs.getString("task_description"));
-				task.setStart_date(rs.getDate("task_start_date"));
-				task.setEnd_date(rs.getDate("task_end_date"));
-
-				task.setAssignee(rs.getInt("task_assignee"));
+				Project project = new Project();
+				project.setId(rs.getInt("project_id"));
+				project.setName(rs.getString("project_name"));
+				project.setDescription(rs.getString("project_description"));
+				project.setStart_date(rs.getDate("project_start_date"));
+				project.setEnd_date(rs.getDate("project_end_date"));
+				project.setCreate_user(rs.getInt("project_create_user"));
 				
-				task.setProject(rs.getInt("task_project"));
-				
-				task.setStatus(rs.getInt("task_status"));
-				tasks.add(task);
-			}	
+				projects.add(project);
+			}
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
 			e.printStackTrace();
 		} 
-
-		return tasks;
-	}
-	
-	public List<Task> getTaskInProject(int projectId) {
-		List<Task> tasks = new LinkedList<Task>();
-		try {
-			Connection connection = MySQLConnection.getConnection();
-			String query = DbQuery.TASK_LIST_BY_PROJECT;
-			PreparedStatement statement = connection.prepareStatement(query);
-			
-			statement.setInt(1, projectId);
-			ResultSet rs = statement.executeQuery();
-			
-			while(rs.next()) {
-				Task task = new Task();
-				task.setId(rs.getInt("task_id"));
-				task.setName(rs.getString("task_name"));
-				task.setDescription(rs.getString("task_description"));
-				task.setStart_date(rs.getDate("task_start_date"));
-				task.setEnd_date(rs.getDate("task_end_date"));
-					
-				task.setAssignee(rs.getInt("task_assignee"));
-				
-				task.setProject(rs.getInt("task_project"));
-				
-				task.setStatus(rs.getInt("task_status"));
-				
-				
-				tasks.add(task);
-			}	
-		} catch (SQLException e) {
-			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
-			e.printStackTrace();
-		} 
-
-		return tasks;
-	}
-	public int addTask(Task task) {
 		
+		return projects;
+	}
+	
+	public List<Project> getProjectCreatedBy() {
+		List<Project> projects = new LinkedList<Project>();
 		try {
 			Connection connection = MySQLConnection.getConnection();
-			String query = DbQuery.ADD_TASK;
-			PreparedStatement statement = connection.prepareStatement(query);
+			String query = DbQuery.PROJECT_CREATED_BY_LIST;
 
-			statement.setString(1, task.getName());
-			statement.setString(2, task.getDescription());
-			statement.setDate(3, task.getStart_date());				
-			statement.setDate(4, task.getEnd_date());
-			/* ASSIGNEE */
+			PreparedStatement statement = connection.prepareStatement(query);
+			ResultSet rs = statement.executeQuery();
+
+			while(rs.next()) {
+				Project project = new Project();
+				project.setId(rs.getInt("project_id"));
+				project.setName(rs.getString("project_name"));
+				project.setDescription(rs.getString("project_description"));
+				project.setStart_date(rs.getDate("project_start_date"));
+				project.setEnd_date(rs.getDate("project_end_date"));
+				project.setCreate_user(rs.getInt("project_create_user"));
+				
+				projects.add(project);
+			}
+		} catch (SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		} 
+		
+		return projects;
+	}
+	
+	public int addProject(Project Project) {
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.ADD_PROJECT;
+			PreparedStatement statement = connection.prepareStatement(query);
+			User user = new User();
+			statement.setString(1, Project.getName());
+			statement.setString(2, Project.getDescription());
+			statement.setDate(3, Project.getStart_date());				
+			statement.setDate(4, Project.getEnd_date());
 			statement.setInt(5, 1);
-			/* PROJECT */
-			statement.setInt(6, task.getProject());
-			
-			statement.setInt(7, 3);
 			return statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
@@ -107,14 +90,14 @@ public class TaskRepository {
 		return 0;
 	}
 
-	public int removeTask(int TaskId) {
+	public int removeProject(int ProjectId) {
 		try {
 			Connection connection = MySQLConnection.getConnection();
-			String query = DbQuery.REMOVE_TASK;
+			String query = DbQuery.REMOVE_PROJECT;
 
 			PreparedStatement statement = connection.prepareStatement(query);
 
-			statement.setInt(1, TaskId);
+			statement.setInt(1, ProjectId);
 
 			return statement.executeUpdate();
 		} catch (SQLException e) {
@@ -125,18 +108,17 @@ public class TaskRepository {
 		return 0;
 	}
 	
-	public int updateAssignee(int userId, int taskId) {
+	public int getUserId(User email) {
 		try {
 			Connection connection = MySQLConnection.getConnection();
-			String query = DbQuery.UPDATE_ASSIGNEE;
+			String query = DbQuery.GET_USER_ID_BY_EMAIL;
 			PreparedStatement statement = connection.prepareStatement(query);
-			statement.setInt(1, userId);
-			statement.setInt(2, taskId);
 			return statement.executeUpdate();
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
 			e.printStackTrace();
 		}
+		
 		return 0;
 	}
 }

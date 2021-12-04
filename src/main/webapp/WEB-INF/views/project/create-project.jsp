@@ -6,16 +6,15 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-h4 {text-align: center;}
 </style>
 </head>
 <body>
 <br>
 
-<h4> Create New Task!</h4>
+<h4 style="text-align:center;"> Create New Project!</h4>
 
 <p style="text-align:center;" class="mb-3">Work work work!</p>
-<form method="post" >
+<form action="" method="post" >
 <div class="container page__container ">
 	<!-- Page Content -->
 	<div class="card card-form ">
@@ -25,10 +24,10 @@ h4 {text-align: center;}
 				
 					<div class="was-validated">
 						<div class="form-row">
-							<label for="validationSample01">Task name</label> 
+							<label for="validationSample01">Project Name</label> 
 							<div class="col-12 col-md-12 mb-3 input-group input-group-merge">
 								<input type="text" class="form-control" name="name"
-									placeholder="Enter task name" required="" >
+									placeholder="Enter project name" required="" >
 							</div>
 						</div>
 					</div>
@@ -44,7 +43,7 @@ h4 {text-align: center;}
 						<div class="col-lg-6">
 	                        <div class="card">
 	                            <div class="card-header card-header-large bg-white">
-	                                <h4 class="card-header__title">Task Start Date</h4>
+	                                <h4 class="card-header__title">Project Start Date</h4>
 	                            </div>
 	                            <div class="card-body">
 	                                <label class="text-label" for="flatpickrSample01">Date</label>
@@ -56,7 +55,7 @@ h4 {text-align: center;}
 	                    <div class="col-lg-6">
 	                        <div class="card">
 	                            <div class="card-header card-header-large bg-white">
-	                                <h4 class="card-header__title">Task End Date</h4>
+	                                <h4 class="card-header__title">Project End Date</h4>
 	                            </div>
 	                            <div class="card-body">
 	                                <label class="text-label" for="flatpickrSample01">Date</label>
@@ -65,9 +64,7 @@ h4 {text-align: center;}
 	                        </div>
 	                    </div>
                     </div>
-					
-				
-				
+
 				<button type="submit" value="create" class="btn btn-primary">Create</button>	
 				
 			</div>

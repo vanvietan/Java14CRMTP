@@ -34,8 +34,6 @@ public class UserRepository {
 				
 				Role role = new Role();
 				role.setId(rs.getInt("role_id"));
-				role.setName(rs.getString("role_name"));
-				role.setDescription(rs.getString("role_description"));
 				
 				user.setRole(role);
 				
@@ -61,8 +59,9 @@ public class UserRepository {
 			statement.setString(3, user.getName());
 			statement.setString(4, user.getPassword());
 			statement.setString(5, user.getPhone());
-			statement.setInt(6, 1);								
-			
+
+			statement.setInt(6, 3);						
+
 			return statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
@@ -81,7 +80,6 @@ public class UserRepository {
 			PreparedStatement statement = connection.prepareStatement(query);
 			
 			statement.setString(1, userEmail);
-			
 			return statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
@@ -90,7 +88,7 @@ public class UserRepository {
 		
 		return 0;
 	}
-	
+
 	/* FIND USER */
 	public List<User> findUser(String emailSession) {
 		List<User> users = new LinkedList<User>();
@@ -238,7 +236,41 @@ public class UserRepository {
 		}		
 		return 0;
 	}
-
 	
+	/* GET LOGIN USER NAME BY ID */
+	public String getUserNameById(int userId) {
+		String userName = null;
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.GET_USER_NAME_BY_ID;
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setInt(1, userId);
+			ResultSet rs = statement.executeQuery();
+			
+			userName = rs.getString("name");	
+		} catch (SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}
+		return userName;
+	}	
 	
+	/* GET USER ID BY EMAIL */
+	public int getUserIdByEmail(String userEmail) {
+		int userId = 0;
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			
+			String query = DbQuery.GET_USER_ID_BY_EMAIL;
+			PreparedStatement statementIdByEmail = connection.prepareStatement(query);
+			statementIdByEmail.setString(1, userEmail);
+			ResultSet rsIdByEmail = statementIdByEmail.executeQuery();		
+		
+			userId = rsIdByEmail.getInt("id");	
+		} catch (SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}
+		return userId;
+	}	
 }
