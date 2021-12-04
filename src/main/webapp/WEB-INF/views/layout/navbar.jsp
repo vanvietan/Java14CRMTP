@@ -18,11 +18,11 @@
                             Project
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">
-                                Manage Project
+                            <a class="dropdown-item" href="project-projectlist">
+                                Project List
                             </a>
-                            <a class="dropdown-item" href="#">
-                                Project Create Project
+                            <a class="dropdown-item" href="project-add">
+                                Create Project
                             </a>
                         </div>
                     </li>

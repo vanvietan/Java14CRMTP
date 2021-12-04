@@ -8,7 +8,7 @@ public class Project {
 	private String name;
 	private Date start_date;
 	private Date end_date;
-	
+	private String description;
 	//Constructor
 	public Project() {
 		
@@ -42,6 +42,12 @@ public class Project {
 	}
 	public Date getEnd_date() {
 		return end_date;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	

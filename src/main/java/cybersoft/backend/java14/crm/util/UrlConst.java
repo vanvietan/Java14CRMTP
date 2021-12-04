@@ -23,4 +23,11 @@ public class UrlConst {
 	public static final String USER_ADD = "/user/add";
 	public static final String USER_DELETE = "/user/delete";
 	public static final String USER_UPDATE = "/user/update";
+	
+	//Project
+	
+	public static final String PROJECT = "/project";
+	public static final String PROJECT_ADD ="/project/add";
+	public static final String PROJECT_DELETE = "/project/delete";
+	public static final String PROJECT_LIST = "/projectlist";
 }
