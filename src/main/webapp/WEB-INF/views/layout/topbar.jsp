@@ -61,6 +61,9 @@
 	                	<a href="log-in">
 	                		<button type="button" class="btn btn-primary btn-rounded" style="height:40px; width:73px"> Log in </button>
 	                	</a>
+	                	<a href="log-out">
+	                		<button type="button" class="btn btn-primary btn-rounded" style="height:40px; width:73px"> Logout </button>
+	                	</a>
 	            	</div>
                 </ul>
                 

@@ -10,8 +10,9 @@
 <title>User Update</title>
 </head>
 <body>	
-	<h1> Change your profile here</h1>
-	
+	<h2> Login to change your profile !!!</h2>
+	<br>
+	<h2>Welcome <%=session.getAttribute("email") %></h2>
 	<div class="col-lg-8 card-form__body card-body">
         <table class="table mt-5">
           <thead>

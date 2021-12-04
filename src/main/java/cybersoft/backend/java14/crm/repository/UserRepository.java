@@ -61,7 +61,8 @@ public class UserRepository {
 			statement.setString(3, user.getName());
 			statement.setString(4, user.getPassword());
 			statement.setString(5, user.getPhone());
-			statement.setInt(6, 1);						
+			statement.setInt(6, 1);								
+			
 			return statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");

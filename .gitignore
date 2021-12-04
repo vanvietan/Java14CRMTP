@@ -23,3 +23,6 @@
 hs_err_pid*
 /build/
 /target/
+target/m2e-wtp/web-resources/META-INF/maven/cybersoft.backend.java14/java14crm/pom.properties
+*.properties
+target/m2e-wtp/web-resources/META-INF/maven/cybersoft.backend.java14/java14crm/pom.properties
