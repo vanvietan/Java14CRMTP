@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cybersoft.backend.java14.crm.model.User;
 import cybersoft.backend.java14.crm.service.UserService;
 import cybersoft.backend.java14.crm.util.JspConst;
 import cybersoft.backend.java14.crm.util.UrlConst;
@@ -18,6 +19,8 @@ import cybersoft.backend.java14.crm.util.UrlConst;
 		})
 public class LoginServlet extends HttpServlet{
 	private UserService service;
+	private User userSession;
+	private int roleSessionId;
 	@Override
 	public void init() throws ServletException {
 		super.init();
@@ -32,9 +35,13 @@ public class LoginServlet extends HttpServlet{
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		boolean isSuccess = service.loginUser(email, password);
+//		userSession = (User) service.findUser(email);
+//		roleSessionId = userSession.getRole().getId();
+		
 		if(isSuccess) {
 			req.getSession().setAttribute("isAuthenticated", true);
 			req.getSession().setAttribute("email", email);
+//			req.getSession().setAttribute("roleSessionId", roleSessionId);
 			resp.sendRedirect(req.getContextPath() + UrlConst.USER_UPDATE);
 		}else {
 			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);

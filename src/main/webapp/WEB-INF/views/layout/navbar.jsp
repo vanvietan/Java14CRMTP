@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page import="cybersoft.backend.java14.crm.util.UrlConst" %>
+
 <div class="page__header mb-0">
     <div class="container page__container">
         <div class="navbar navbar-secondary navbar-light navbar-expand-sm p-0">
@@ -37,6 +39,12 @@
                             </a>
                             <a class="dropdown-item" href="<%=request.getContextPath()+UrlConst.SIGNUP%>">
                                 Create User
+                            </a>
+                            <a class="dropdown-item" href="role-edit">
+                                Role Edit
+                            </a> 
+                            <a class="dropdown-item" href="user-update">
+                                Change Profile User
                             </a>
                         </div>
                     </li>

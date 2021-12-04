@@ -59,6 +59,7 @@ public class UserRepository {
 			statement.setString(3, user.getName());
 			statement.setString(4, user.getPassword());
 			statement.setString(5, user.getPhone());
+
 			statement.setInt(6, 3);						
 
 			return statement.executeUpdate();
