@@ -43,7 +43,7 @@ public class AuthFilter implements Filter {
 			resp.sendRedirect(req.getContextPath() + UrlConst.AUTH_LOGIN);
 		}
 	}
-
+		
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		// TODO Auto-generated method stub

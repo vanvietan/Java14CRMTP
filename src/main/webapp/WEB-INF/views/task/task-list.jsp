@@ -9,7 +9,7 @@
 <title>Task List</title>
 </head>
 <body>
-<h1 style="text-align:center;"> Create New Task!</h1>
+<h1 style="text-align:center;"> Task List!</h1>
 		<table class="table mt-5">
 	          <thead>
 	            <tr>

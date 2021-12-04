@@ -34,7 +34,8 @@ public class UserRepository {
 				
 				Role role = new Role();
 				role.setId(rs.getInt("role_id"));
-				
+				role.setName(rs.getString("role_name"));
+				role.setDescription(rs.getString("role_description"));
 				user.setRole(role);
 				
 				users.add(user);
