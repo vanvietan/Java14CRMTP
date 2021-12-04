@@ -18,7 +18,7 @@ public class ProjectRepository {
 		List<Project> projects = new LinkedList<Project>();
 		try {
 			Connection connection = MySQLConnection.getConnection();
-			String query = DbQuery.TASK_LIST;
+			String query = DbQuery.PROJECT_LIST;
 
 			PreparedStatement statement = connection.prepareStatement(query);
 			ResultSet rs = statement.executeQuery();
@@ -30,6 +30,35 @@ public class ProjectRepository {
 				project.setDescription(rs.getString("project_description"));
 				project.setStart_date(rs.getDate("project_start_date"));
 				project.setEnd_date(rs.getDate("project_end_date"));
+				project.setCreate_user(rs.getInt("project_create_user"));
+				
+				projects.add(project);
+			}
+		} catch (SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		} 
+		
+		return projects;
+	}
+	
+	public List<Project> getProjectCreatedBy() {
+		List<Project> projects = new LinkedList<Project>();
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.PROJECT_CREATED_BY_LIST;
+
+			PreparedStatement statement = connection.prepareStatement(query);
+			ResultSet rs = statement.executeQuery();
+
+			while(rs.next()) {
+				Project project = new Project();
+				project.setId(rs.getInt("project_id"));
+				project.setName(rs.getString("project_name"));
+				project.setDescription(rs.getString("project_description"));
+				project.setStart_date(rs.getDate("project_start_date"));
+				project.setEnd_date(rs.getDate("project_end_date"));
+				project.setCreate_user(rs.getInt("project_create_user"));
 				
 				projects.add(project);
 			}
@@ -51,7 +80,7 @@ public class ProjectRepository {
 			statement.setString(2, Project.getDescription());
 			statement.setDate(3, Project.getStart_date());				
 			statement.setDate(4, Project.getEnd_date());
-			statement.setInt(4, user.getId());
+			statement.setInt(5, 1);
 			return statement.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
@@ -76,6 +105,20 @@ public class ProjectRepository {
 			e.printStackTrace();
 		}
 
+		return 0;
+	}
+	
+	public int getUserId(User email) {
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.GET_USER_ID_BY_EMAIL;
+			PreparedStatement statement = connection.prepareStatement(query);
+			return statement.executeUpdate();
+		} catch (SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		}
+		
 		return 0;
 	}
 }

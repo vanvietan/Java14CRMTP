@@ -46,7 +46,41 @@ public class TaskRepository {
 
 		return tasks;
 	}
+	
+	public List<Task> getTaskInProject(int projectId) {
+		List<Task> tasks = new LinkedList<Task>();
+		try {
+			Connection connection = MySQLConnection.getConnection();
+			String query = DbQuery.TASK_LIST_BY_PROJECT;
+			PreparedStatement statement = connection.prepareStatement(query);
+			
+			statement.setInt(1, projectId);
+			ResultSet rs = statement.executeQuery();
+			
+			while(rs.next()) {
+				Task task = new Task();
+				task.setId(rs.getInt("task_id"));
+				task.setName(rs.getString("task_name"));
+				task.setDescription(rs.getString("task_description"));
+				task.setStart_date(rs.getDate("task_start_date"));
+				task.setEnd_date(rs.getDate("task_end_date"));
+					
+				task.setAssignee(rs.getInt("task_assignee"));
+				
+				task.setProject(rs.getInt("task_project"));
+				
+				task.setStatus(rs.getInt("task_status"));
+				
+				
+				tasks.add(task);
+			}	
+		} catch (SQLException e) {
+			System.out.println("Không thể kết nối đến cơ sở dữ liệu");
+			e.printStackTrace();
+		} 
 
+		return tasks;
+	}
 	public int addTask(Task task) {
 		
 		try {
@@ -61,7 +95,7 @@ public class TaskRepository {
 			/* ASSIGNEE */
 			statement.setInt(5, 1);
 			/* PROJECT */
-			statement.setInt(6, 1);
+			statement.setInt(6, task.getProject());
 			
 			statement.setInt(7, 3);
 			return statement.executeUpdate();

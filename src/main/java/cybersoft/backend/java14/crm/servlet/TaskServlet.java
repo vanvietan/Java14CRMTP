@@ -24,13 +24,14 @@ import javax.servlet.http.HttpServletResponse;
 		UrlConst.TASK_DELETE,
 		UrlConst.TASK_LIST,
 		UrlConst.TASK_ADD,
-		UrlConst.TASK_SHOW_LIST_USER
+		UrlConst.TASK_SHOW_LIST_USER,
+		UrlConst.TASK_LIST_IN_PROJECT
 })
 public class TaskServlet extends HttpServlet {
 	private String action;
 	private TaskService service;
 	private Task task;
-	private int userId, taskId;
+	private int userId, taskId, projectId;
 	private String sd, ed;
 	private UserService userService;
 
@@ -54,6 +55,8 @@ public class TaskServlet extends HttpServlet {
 		
 		/* ADD task */
 		case UrlConst.TASK_ADD:
+			projectId = Integer.parseInt(req.getParameter("projectId"));
+			task.setProject(projectId);
 			req.getRequestDispatcher(JspConst.TASK_ADD)
 			.forward(req, resp);
 			break;
@@ -65,7 +68,16 @@ public class TaskServlet extends HttpServlet {
 			req.getRequestDispatcher(JspConst.TASK_LIST)
 				.forward(req, resp);
 			break;
-
+		
+		/* SHOW LIST TASK IN PROJECT */
+		case UrlConst.TASK_LIST_IN_PROJECT:
+			projectId = Integer.parseInt(req.getParameter("projectId"));
+			List<Task> task = service.getTaskInProject(projectId);
+			req.setAttribute("tasks", task);
+			req.getRequestDispatcher(JspConst.TASK_LIST)
+				.forward(req, resp);
+			break;
+			
 		/* UPDATE ASSIGNEE */
 		case UrlConst.TASK_UPDATE_ASSIGNEE:
 			userId = Integer.parseInt(req.getParameter("userId"));
@@ -114,7 +126,7 @@ public class TaskServlet extends HttpServlet {
 			task.setEnd_date(sqled);
 			task.setAssignee(1);
 			task.setStatus(3);
-			task.setProject(1);
+			task.setProject(projectId);
 			service.addTask(task);
 			resp.sendRedirect(req.getContextPath() + UrlConst.TASK_LIST);
 		}

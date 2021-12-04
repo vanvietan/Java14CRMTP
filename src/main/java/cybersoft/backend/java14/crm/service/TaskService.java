@@ -15,7 +15,11 @@ public class TaskService {
 	public List<Task> getTasks() {
 		return repository.getTasks();
 	}
-
+	
+	public List<Task> getTaskInProject(int projectId) {
+		return repository.getTaskInProject(projectId);
+	}
+	
 	public boolean addTask(Task task) {
 		return repository.addTask(task) == 1 ?true: false;
 	}

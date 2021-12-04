@@ -10,7 +10,7 @@ public class JspConst {
 	final public static String SIGNUP =				"WEB-INF/views/user/signup.jsp";
 	final public static String USER_UPDATE = 		"WEB-INF/views/user/user-update.jsp";
 	
-  //Task
+	//Task
 	final public static String TASK_LIST =			"WEB-INF/views/task/task-list.jsp";
 	final public static String TASK_ADD =			"WEB-INF/views/task/create-task.jsp";
 	final public static String TEST = 				"WEB-INF/views/task/test.jsp";
@@ -20,6 +20,7 @@ public class JspConst {
 	
 	//Project
 	public static final String PROJECT_ADD = 		"WEB-INF/views/project/create-project.jsp";
-
+	final public static String PROJECT_LIST =		"WEB-INF/views/project/project-list.jsp";
+	public static final String PROJECT = 			"WEB-INF/views/project/project";
 
 }

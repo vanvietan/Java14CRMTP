@@ -3,6 +3,7 @@ package cybersoft.backend.java14.crm.service;
 import java.util.List;
 
 import cybersoft.backend.java14.crm.model.Project;
+import cybersoft.backend.java14.crm.model.User;
 import cybersoft.backend.java14.crm.repository.ProjectRepository;
 
 public class ProjectService {
@@ -22,5 +23,9 @@ public class ProjectService {
 
 	public boolean deleteProject(int ProjectId) {
 		return true;
+	}
+	
+	public int getUserId(User email) {
+		return repository.getUserId(email);
 	}
 }

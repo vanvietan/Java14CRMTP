@@ -33,6 +33,7 @@ public class UrlConst {
 	public static final String TASK_LIST = "/task-list";
 	public static final String TASK_UPDATE_ASSIGNEE = "/update-assignee";
 	public static final String TASK_SHOW_LIST_USER = "/task-show-list-user";
+	public static final String TASK_LIST_IN_PROJECT = "/task-list-in-project";
 
 	public static final String USER_UPDATE_NAME ="/user-update/name";
 	public static final String USER_UPDATE_EMAIL ="/user-update/email";
@@ -52,6 +53,10 @@ public class UrlConst {
 	public static final String ROLE_EDIT_USER = "/role-edit/user";
 
 	//PROJECT
-	public static final String PROJECT_ADD = "/project/create-project";
+	public static final String PROJECT_ADD = "/create-project";
+	public static final String PROJECT = "/project";
+	public static final String PROJECT_DELETE = "/project-delete";
+	public static final String PROJECT_LIST = "/project-list";
+	public static final String PROJECT_CREATED_BY_LIST = "/project-created-by-list";
 }
 
